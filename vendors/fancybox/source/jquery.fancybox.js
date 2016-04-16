@@ -137,13 +137,13 @@
 
 			// HTML templates
 			tpl: {
-				wrap     : '<div class="fancybox-wrap" tabindex="-1"><div class="fancybox-skin"><div class="fancybox-outer"><div class="fancybox-inner"></div></div></div></div>',
-				image    : '<img class="fancybox-image" src="{href}" alt="">',
-				iframe   : '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen'="" +="" (ie="" ?="" '="" allowtransparency="true" :="" '')=""></iframe>',
-				error    : '<p class="fancybox-error">The requested content cannot be loaded.<br>Please try again later.</p>',
-				closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;" target="_blank" rel="external"></a>',
-				next     : '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;" target="_blank" rel="external"><span></span></a>',
-				prev     : '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;" target="_blank" rel="external"><span></span></a>'
+				wrap     : '<div class="fancybox-wrap" tabIndex="-1"><div class="fancybox-skin"><div class="fancybox-outer"><div class="fancybox-inner"></div></div></div></div>',
+				image    : '<img class="fancybox-image" src="{href}" alt="" />',
+				iframe   : '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen' + (IE ? ' allowtransparency="true"' : '') + '></iframe>',
+				error    : '<p class="fancybox-error">The requested content cannot be loaded.<br/>Please try again later.</p>',
+				closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a>',
+				next     : '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
+				prev     : '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><span></span></a>'
 			},
 
 			// Properties for each animation type
@@ -1034,7 +1034,72 @@
 				item,
 				i;
 
-			for (i = 1; i <= cnt;="" i="" +="1)" {="" item="group[" (current.index="" )="" %="" len="" ];="" if="" (item.type="==" 'image'="" &&="" item.href)="" new="" image().src="item.href;" }="" },="" _afterload:="" function="" ()="" var="" coming="F.coming," previous="F.current," placeholder="fancybox-placeholder" ,="" current,="" content,="" type,="" scrolling,="" href,="" embed;="" f.hideloading();="" (!coming="" ||="" f.isactive="==" false)="" return;="" (false="==" f.trigger('afterload',="" coming,="" previous))="" coming.wrap.stop(true).trigger('onreset').remove();="" f.coming="null;" (previous)="" f.trigger('beforechange',="" previous);="" previous.wrap.stop(true).removeclass('fancybox-opened')="" .find('.fancybox-item,="" .fancybox-nav')="" .remove();="" f.unbindevents();="" current="coming;" content="coming.content;" type="coming.type;" scrolling="coming.scrolling;" $.extend(f,="" wrap="" :="" current.wrap,="" skin="" current.skin,="" outer="" current.outer,="" inner="" current.inner,="" });="" href="current.href;" switch="" (type)="" case="" 'inline':="" 'ajax':="" 'html':="" (current.selector)="">').html(content).find(current.selector);
+			for (i = 1; i <= cnt; i += 1) {
+				item = group[ (current.index + i ) % len ];
+
+				if (item.type === 'image' && item.href) {
+					new Image().src = item.href;
+				}
+			}
+		},
+
+		_afterLoad: function () {
+			var coming   = F.coming,
+				previous = F.current,
+				placeholder = 'fancybox-placeholder',
+				current,
+				content,
+				type,
+				scrolling,
+				href,
+				embed;
+
+			F.hideLoading();
+
+			if (!coming || F.isActive === false) {
+				return;
+			}
+
+			if (false === F.trigger('afterLoad', coming, previous)) {
+				coming.wrap.stop(true).trigger('onReset').remove();
+
+				F.coming = null;
+
+				return;
+			}
+
+			if (previous) {
+				F.trigger('beforeChange', previous);
+
+				previous.wrap.stop(true).removeClass('fancybox-opened')
+					.find('.fancybox-item, .fancybox-nav')
+					.remove();
+			}
+
+			F.unbindEvents();
+
+			current   = coming;
+			content   = coming.content;
+			type      = coming.type;
+			scrolling = coming.scrolling;
+
+			$.extend(F, {
+				wrap  : current.wrap,
+				skin  : current.skin,
+				outer : current.outer,
+				inner : current.inner,
+				current  : current,
+				previous : previous
+			});
+
+			href = current.href;
+
+			switch (type) {
+				case 'inline':
+				case 'ajax':
+				case 'html':
+					if (current.selector) {
+						content = $('<div>').html(content).find(current.selector);
 
 					} else if (isQuery(content)) {
 						if (!content.data(placeholder)) {
@@ -1056,15 +1121,15 @@
 				break;
 
 				case 'swf':
-					content = '<object id="fancybox-swf" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%"><param name="movie" value="' + href + '">';
+					content = '<object id="fancybox-swf" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%"><param name="movie" value="' + href + '"></param>';
 					embed   = '';
 
 					$.each(current.swf, function(name, val) {
-						content += '<param name="' + name + '" value="' + val + '">';
+						content += '<param name="' + name + '" value="' + val + '"></param>';
 						embed   += ' ' + name + '="' + val + '"';
 					});
 
-					content += '<embed src="' + href + '" type="application/x-shockwave-flash" width="100%" height="100%" '="" +="" embed=""></object>';
+					content += '<embed src="' + href + '" type="application/x-shockwave-flash" width="100%" height="100%"' + embed + '></embed></object>';
 				break;
 			}
 
@@ -1338,7 +1403,35 @@
 					left : margin[3]
 				};
 
-			if (current.autoCenter && current.fixed && !onlyAbsolute && height <= viewport.h="" &&="" width="" <="viewport.w)" {="" rez.position="fixed" ;="" }="" else="" if="" (!current.locked)="" rez.top="" +="viewport.y;" rez.left="" ((viewport.h="" -="" height)="" *="" current.topratio)));="" ((viewport.w="" width)="" current.leftratio)));="" return="" rez;="" },="" _afterzoomin:="" function="" ()="" var="" current="F.current;" (!current)="" return;="" f.isopen="F.isOpened" =="" true;="" f.wrap.css('overflow',="" 'visible').addclass('fancybox-opened');="" f.update();="" assign="" a="" click="" event="" (="" current.closeclick="" ||="" (current.nextclick="" f.group.length=""> 1) ) {
+			if (current.autoCenter && current.fixed && !onlyAbsolute && height <= viewport.h && width <= viewport.w) {
+				rez.position = 'fixed';
+
+			} else if (!current.locked) {
+				rez.top  += viewport.y;
+				rez.left += viewport.x;
+			}
+
+			rez.top  = getValue(Math.max(rez.top,  rez.top  + ((viewport.h - height) * current.topRatio)));
+			rez.left = getValue(Math.max(rez.left, rez.left + ((viewport.w - width)  * current.leftRatio)));
+
+			return rez;
+		},
+
+		_afterZoomIn: function () {
+			var current = F.current;
+
+			if (!current) {
+				return;
+			}
+
+			F.isOpen = F.isOpened = true;
+
+			F.wrap.css('overflow', 'visible').addClass('fancybox-opened');
+
+			F.update();
+
+			// Assign a click event
+			if ( current.closeClick || (current.nextClick && F.group.length > 1) ) {
 				F.inner.css('cursor', 'pointer').bind('click.fb', function(e) {
 					if (!$(e.target).is('a') && !$(e.target).parent().is('a')) {
 						e.preventDefault();
@@ -1885,7 +1978,7 @@
 		if ( $.scrollbarWidth === undefined ) {
 			// http://benalman.com/projects/jquery-misc-plugins/#scrollbarwidth
 			$.scrollbarWidth = function() {
-				var parent = $('<div style="width:50px;height:50px;overflow:auto"><div></div>').appendTo('body'),
+				var parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body'),
 					child  = parent.children(),
 					width  = child.innerWidth() - child.height( 99 ).innerWidth();
 
@@ -1921,7 +2014,7 @@
 
 		H.removeClass('fancybox-lock-test');
 
-		$("<style type="text/css">.fancybox-margin{margin-right:" + (w2 - w1) + "px;}</style>").appendTo("head");
+		$("<style type='text/css'>.fancybox-margin{margin-right:" + (w2 - w1) + "px;}</style>").appendTo("head");
 	});
 
-}(window, document, jQuery));</div></=></=>
+}(window, document, jQuery));
