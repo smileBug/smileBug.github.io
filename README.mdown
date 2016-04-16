@@ -1,0 +1,2 @@
+#欢迎来到我的个人博客：[拾荒岁月](http://smilebug.me "悬停显示")
+该博客基于Github Pages + Hexo 搭建的
