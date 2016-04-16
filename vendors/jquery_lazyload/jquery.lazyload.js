@@ -102,7 +102,7 @@
                         var elements_left = elements.length;
                         settings.appear.call(self, elements_left, settings);
                     }
-                    $("<img />")
+                    $("<img>")
                         .bind("load", function() {
 
                             var original = $self.attr("data-" + settings.data_attribute);
@@ -179,31 +179,7 @@
             fold = $(settings.container).offset().top + $(settings.container).height();
         }
 
-        return fold <= $(element).offset().top - settings.threshold;
-    };
-
-    $.rightoffold = function(element, settings) {
-        var fold;
-
-        if (settings.container === undefined || settings.container === window) {
-            fold = $window.width() + $window.scrollLeft();
-        } else {
-            fold = $(settings.container).offset().left + $(settings.container).width();
-        }
-
-        return fold <= $(element).offset().left - settings.threshold;
-    };
-
-    $.abovethetop = function(element, settings) {
-        var fold;
-
-        if (settings.container === undefined || settings.container === window) {
-            fold = $window.scrollTop();
-        } else {
-            fold = $(settings.container).offset().top;
-        }
-
-        return fold >= $(element).offset().top + settings.threshold  + $(element).height();
+        return fold <= $(element).offset().top="" -="" settings.threshold;="" };="" $.rightoffold="function(element," settings)="" {="" var="" fold;="" if="" (settings.container="==" undefined="" ||="" settings.container="==" window)="" fold="$window.width()" +="" $window.scrollleft();="" }="" else="" $(settings.container).width();="" return="" <="$(element).offset().left" $.abovethetop="function(element,">= $(element).offset().top + settings.threshold  + $(element).height();
     };
 
     $.leftofbegin = function(element, settings) {
@@ -240,3 +216,4 @@
     });
 
 })(jQuery, window, document);
+</=>

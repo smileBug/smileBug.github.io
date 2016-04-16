@@ -756,23 +756,7 @@
 						return true;
 					}
 					// Chrome 32 and above with width=device-width or less don't need FastClick
-					if (chromeVersion > 31 && document.documentElement.scrollWidth <= window.outerWidth) {
-						return true;
-					}
-				}
-
-			// Chrome desktop doesn't need FastClick (issue #15)
-			} else {
-				return true;
-			}
-		}
-
-		if (deviceIsBlackBerry10) {
-			blackberryVersion = navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/);
-
-			// BlackBerry 10.3+ does not require Fastclick library.
-			// https://github.com/ftlabs/fastclick/issues/251
-			if (blackberryVersion[1] >= 10 && blackberryVersion[2] >= 3) {
+					if (chromeVersion > 31 && document.documentElement.scrollWidth <= 251="" window.outerwidth)="" {="" return="" true;="" }="" chrome="" desktop="" doesn't="" need="" fastclick="" (issue="" #15)="" else="" if="" (deviceisblackberry10)="" blackberryversion="navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/);" blackberry="" 10.3+="" does="" not="" require="" library.="" https:="" github.com="" ftlabs="" issues="" (blackberryversion[1]="">= 10 && blackberryVersion[2] >= 3) {
 				metaViewport = document.querySelector('meta[name=viewport]');
 
 				if (metaViewport) {
@@ -781,61 +765,8 @@
 						return true;
 					}
 					// width=device-width (or less than device-width) eliminates click delay.
-					if (document.documentElement.scrollWidth <= window.outerWidth) {
-						return true;
-					}
-				}
-			}
-		}
-
-		// IE10 with -ms-touch-action: none or manipulation, which disables double-tap-to-zoom (issue #97)
-		if (layer.style.msTouchAction === 'none' || layer.style.touchAction === 'manipulation') {
-			return true;
-		}
-
-		// Firefox version - zero for other browsers
-		firefoxVersion = +(/Firefox\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
-
-		if (firefoxVersion >= 27) {
+					if (document.documentElement.scrollWidth <= window.outerwidth)="" {="" return="" true;="" }="" ie10="" with="" -ms-touch-action:="" none="" or="" manipulation,="" which="" disables="" double-tap-to-zoom="" (issue="" #97)="" if="" (layer.style.mstouchaction="==" 'none'="" ||="" layer.style.touchaction="==" 'manipulation')="" firefox="" version="" -="" zero="" for="" other="" browsers="" firefoxversion="+(/Firefox\/([0-9]+)/.exec(navigator.userAgent)" [,0])[1];="" (firefoxversion="">= 27) {
 			// Firefox 27+ does not have tap delay if the content is not zoomable - https://bugzilla.mozilla.org/show_bug.cgi?id=922896
 
 			metaViewport = document.querySelector('meta[name=viewport]');
-			if (metaViewport && (metaViewport.content.indexOf('user-scalable=no') !== -1 || document.documentElement.scrollWidth <= window.outerWidth)) {
-				return true;
-			}
-		}
-
-		// IE11: prefixed -ms-touch-action is no longer supported and it's recomended to use non-prefixed version
-		// http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx
-		if (layer.style.touchAction === 'none' || layer.style.touchAction === 'manipulation') {
-			return true;
-		}
-
-		return false;
-	};
-
-
-	/**
-	 * Factory method for creating a FastClick object
-	 *
-	 * @param {Element} layer The layer to listen on
-	 * @param {Object} [options={}] The options to override the defaults
-	 */
-	FastClick.attach = function(layer, options) {
-		return new FastClick(layer, options);
-	};
-
-
-	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
-
-		// AMD. Register as an anonymous module.
-		define(function() {
-			return FastClick;
-		});
-	} else if (typeof module !== 'undefined' && module.exports) {
-		module.exports = FastClick.attach;
-		module.exports.FastClick = FastClick;
-	} else {
-		window.FastClick = FastClick;
-	}
-}());
+			if (metaViewport && (metaViewport.content.indexOf('user-scalable=no') !== -1 || document.documentElement.scrollWidth </=></=>

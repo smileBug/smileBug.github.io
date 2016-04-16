@@ -20,7 +20,7 @@ function hookTemplate() {
     }
 
     if (agent && /^Mozilla/.test(agent)) {
-      rs = rs.replace(/<\/div><p>/, admin + getAgentInfo(agent) + '</div><p>');
+      rs = rs.replace(/<\ div=""><p>/, admin + getAgentInfo(agent) + '</p><p>');
     }
 
     return rs;
@@ -113,3 +113,4 @@ function getAgentInfo(string) {
     return !isiPad && userAgent.match(pattern);
   }
 }
+</p></\>

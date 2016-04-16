@@ -185,7 +185,7 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
   color: #555;
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h2,
 h3,
@@ -393,13 +393,6 @@ dd {
   font-size: 14px;
   color: #999;
 }
-.scrollbar-measure {
-  width: 100px;
-  height: 100px;
-  overflow: scroll;
-  position: absolute;
-  top: -9999px;
-}
 .use-motion .motion-element {
   opacity: 0;
 }
@@ -506,31 +499,31 @@ body {
 }
 pre,
 .highlight {
-  overflow: auto;
+  background: #f7f7f7;
   margin: 20px 0;
   padding: 15px;
+  overflow: auto;
   font-size: 13px;
   color: #4d4d4c;
-  background: #f7f7f7;
   line-height: 1.6;
+}
+.highlight .gutter pre {
+  color: #666;
 }
 pre,
 code {
-  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: "Input Mono", "PT Mono", Consolas, Monaco, Menlo, monospace;
 }
 code {
-  padding: 2px 4px;
   word-break: break-all;
-  color: #555;
   background: #eee;
-  border-radius: 4px;
-  font-size: 13px;
+  text-shadow: 0 1px #fff;
+  padding: 0 0.3em;
 }
 pre code {
-  padding: 0;
-  color: #4d4d4c;
   background: none;
   text-shadow: none;
+  padding: 0;
 }
 .highlight pre {
   border: none;
@@ -564,7 +557,6 @@ pre code {
   float: right;
 }
 .highlight .gutter pre {
-  color: #666;
   text-align: right;
   padding-right: 20px;
 }
@@ -598,7 +590,9 @@ pre .command {
   color: #f5871f;
 }
 pre .ruby .class .title,
-pre .css .rules .attribute,
+pre .css .rules .attribute {
+  color: #718c00;
+}
 pre .string,
 pre .value,
 pre .inheritance,
@@ -897,6 +891,7 @@ pre .javascript .function {
   color: #222;
   background: #222;
   border-bottom: none;
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .brand:hover {
   color: #222;
@@ -913,7 +908,6 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -999,9 +993,6 @@ pre .javascript .function {
 }
 .use-motion .menu-item {
   opacity: 0;
-}
-.post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 @media (max-width: 767px) {
   .post-body {
@@ -1107,20 +1098,7 @@ pre .javascript .function {
   }
 }
 .posts-collapse {
-  position: relative;
-  z-index: 1010;
   margin-left: 0;
-}
-.posts-collapse::after {
-  content: " ";
-  position: absolute;
-  top: 20px;
-  left: 0;
-  margin-left: -2px;
-  width: 4px;
-  height: 100%;
-  background: #f5f5f5;
-  z-index: -1;
 }
 @media (max-width: 767px) {
   .posts-collapse {
@@ -1195,6 +1173,7 @@ pre .javascript .function {
   margin-left: 60px;
   font-size: 16px;
   font-weight: normal;
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
   line-height: inherit;
 }
 .posts-collapse .post-title::after {
@@ -1253,7 +1232,6 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1382,11 +1360,11 @@ pre .javascript .function {
   border: none;
 }
 .sidebar {
+  width: 0;
   position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
-  width: 0;
   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
   background: #222;
@@ -1534,7 +1512,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #080086;
+  background: #78ff63;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1584,43 +1562,27 @@ pre .javascript .function {
 .sidebar-panel-active {
   display: block;
 }
+.post-toc {
+  overflow: hidden;
+  position: relative;
+}
 .post-toc-empty {
   font-size: 14px;
   color: #666;
 }
-.post-toc-wrap {
-  overflow: hidden;
-}
-.post-toc {
-  overflow: auto;
-}
 .post-toc ol {
+  overflow: auto;
   margin: 0;
-  padding: 0 2px 5px 10px;
+  padding: 0 10px 10px;
   text-align: left;
   list-style: none;
   font-size: 14px;
 }
-.post-toc ol > ol {
-  padding-left: 0;
-}
 .post-toc ol a {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  transition-property: all;
   color: #999;
-  border-bottom-color: #555;
 }
 .post-toc ol a:hover {
   color: #ccc;
-  border-bottom-color: #ccc;
-}
-.post-toc .nav-item {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  line-height: 1.8;
 }
 .post-toc .nav .nav-child {
   display: none;
@@ -1635,14 +1597,27 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #87daff;
-  border-bottom-color: #87daff;
+  color: #ccc;
 }
 .post-toc .nav .active-current > a {
   color: #87daff;
 }
 .post-toc .nav .active-current > a:hover {
   color: #87daff;
+}
+.post-toc-indicator {
+  height: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+.post-toc-indicator-top {
+  opacity: 0;
+  margin-top: 10px;
+}
+.post-toc-indicator-bottom {
+  position: absolute;
+  width: 100%;
 }
 .footer {
   font-size: 14px;
@@ -2020,23 +1995,6 @@ a.search-result {
   top: 42%;
   color: #ccc;
 }
-.site-uv,
-.site-pv,
-.page-pv {
-  display: inline-block;
-}
-.site-uv .busuanzi-value,
-.site-pv .busuanzi-value,
-.page-pv .busuanzi-value {
-  margin: 0 5px;
-}
-.site-uv {
-  margin-right: 10px;
-}
-.site-uv::after {
-  content: "|";
-  padding-left: 10px;
-}
 .use-motion .post {
   opacity: 0;
 }
@@ -2050,6 +2008,19 @@ a.search-result {
     top: 5px;
   }
 }
+.page-archive .posts-collapse {
+  position: relative;
+  z-index: 1010;
+}
+.page-archive .posts-collapse::after {
+  top: 20px;
+  left: 0;
+  margin-left: -2px;
+  width: 4px;
+  height: 100%;
+  background: #f5f5f5;
+  z-index: -1;
+}
 .page-archive .posts-collapse .archive-move-on {
   position: absolute;
   top: 11px;
@@ -2061,6 +2032,11 @@ a.search-result {
   background: #555;
   border: 1px solid #fff;
   border-radius: 50%;
+}
+.page-archive .posts-collapse::before,
+.page-archive .posts-collapse::after {
+  content: " ";
+  position: absolute;
 }
 .category-all-page .category-all-title {
   text-align: center;
