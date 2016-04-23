@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="smileBug,javascript,前端" />
+  <meta name="keywords" content="instanceof,isArray," />
 
 
 
@@ -80,15 +80,19 @@
 
 
 
-<meta name="description" content="如今最好，别说来日方长">
-<meta property="og:type" content="website">
-<meta property="og:title" content="拾荒岁月">
-<meta property="og:url" content="http://smileBug.github.io/index.html">
+<meta name="description" content="##检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true
+与它类似的还有通过原型链判断数组：12var arr = [1,2,3];console.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 判断数组以及instanceof的局限性">
+<meta property="og:url" content="http://smileBug.github.io/2016/04/23/JavaScript-判断数组以及instanceof的局限性/index.html">
 <meta property="og:site_name" content="拾荒岁月">
-<meta property="og:description" content="如今最好，别说来日方长">
+<meta property="og:description" content="##检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true
+与它类似的还有通过原型链判断数组：12var arr = [1,2,3];console.">
+<meta property="og:updated_time" content="2016-04-23T07:55:15.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拾荒岁月">
-<meta name="twitter:description" content="如今最好，别说来日方长">
+<meta name="twitter:title" content="JavaScript 判断数组以及instanceof的局限性">
+<meta name="twitter:description" content="##检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true
+与它类似的还有通过原型链判断数组：12var arr = [1,2,3];console.">
 
 
 
@@ -106,7 +110,7 @@
   };
 </script>
 
-  <title> 拾荒岁月 </title>
+  <title> JavaScript 判断数组以及instanceof的局限性 | 拾荒岁月 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,9 +131,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -258,10 +260,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/04/23/JavaScript-判断数组以及instanceof的局限性/" itemprop="url">
-                  JavaScript 判断数组以及instanceof的局限性
-                </a>
+                JavaScript 判断数组以及instanceof的局限性
               
             
           </h1>
@@ -315,6 +314,8 @@
           
 
          
+           <span id="busuanzi_container_page_pv">&nbsp;&nbsp;|&nbsp;&nbsp;阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+          
 
         </div>
       </header>
@@ -327,9 +328,7 @@
       
 
       
-        
-          
-            <p>##检测数组<br>说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+        <p>##检测数组<br>说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
 <p>与它类似的还有通过原型链判断数组：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.constructor == <span class="built_in">Array</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
 <p>用这两种方法来判断数组感觉很美好，但实际上是有漏洞的。</p>
 <p>##局限性：<br>instanceof操作符与constructor属性的问题在于，它们都假定单一的全局执行环境。如果网页中多个框架，那实际上就存在两个以上不同的全局执行环境，从而就存在两个以上版本的Array构造函数。如果arr是另个框架定义的数组，那么上述两种方法就都会返回flase。</p>
@@ -337,405 +336,59 @@
 <p>基于该思路同样也可以检测某个值是不是原生函数或正则表达式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">value</span>)</span>&#123;    </span><br><span class="line"> <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(value) == <span class="string">'[object Function]'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isRegExp</span>(<span class="params">value</span>)</span>&#123;    </span><br><span class="line"> <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(value) == <span class="string">'[object RegExp]'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>##自动判断<br>此外ECMAScript5新增了Array.isArray()方法。这个方法能自动判断某个值到底是不是数组，而不管它是在哪个全局执行环境中创建的。IE9+、 Firefox 4+、Safari 5+、Opera10.5+和Chrome都实现了这个方法。但是在IE8之前的版本是不支持的。</p>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/20/一把梯子/" itemprop="url">
-                  一把梯子
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T18:34:01+08:00" content="2016-04-20">
-              2016-04-20
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/instanceof/" rel="tag">#instanceof</a>
           
-
+            <a href="/tags/isArray/" rel="tag">#isArray</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/20/一把梯子/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/一把梯子/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-         
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>昨天晚上躺在床上逛技术贴，发现一个叫做XX-Net的好东西，一时惊为天人，这不，今天早上一起我就迫不及待Download下来看看。弄完试了下的确还不错，装个插件后浏览墙内墙外的网站它自己能够自动切换很方便。</p>
-<p>Github上的地址：<a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">https://github.com/XX-net/XX-Net</a><br>里面文档介绍的配置方法很详细，稍微折腾下就可以了。</p>
-<p>之前翻墙用的是<a href="http://www.fqjiasu.com/" target="_blank" rel="external">ShadowSocks</a>，也蛮好用的。最低只需要6块钱一个月，不过有5个G的使用上限。</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/20/一把梯子/" rel="next" title="一把梯子">
+                <i class="fa fa-chevron-left"></i> 一把梯子
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/04/16/关于实习校招/" itemprop="url">
-                  关于实习校招
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-16T17:16:23+08:00" content="2016-04-16">
-              2016-04-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/16/关于实习校招/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/关于实习校招/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-         
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。</p>
-<p>整个3月份参加了三场笔试，有腾讯，网易和360。三场考试下来，我觉得网易的试题是最好的，倒不是说我答的多好，而是它最让我感受到我是在答前端的笔试。因为学习时间短，知识积累不足，三场笔试就过了360一家，就连过的那场也是踩着线过的。的确我在这知识储备这方面太不足了，总而言之，还是要多看书。</p>
-<p>这次360招前端流程比较复杂，笔试过了不是直接面试，而是穿插了一次项目作业和培训。而我递交的作业没能通过筛选，最后只能止步这一环节。现在想想挺可惜的，只恨当时做那份项目作业没能多思考多拓展一些细节，只想着早点交上去。不过说实在的，这份作业给了我许多体会，让我感受到只是单单看书看资料是远远不够的，编程这玩意说白了还得靠项目实践，靠代码量。真应了那句 “无他，唯手熟尔”。</p>
-<p>尽管这次没能得到一个理想的结果，但是我也从中感受到了自己离目标的差距，也算为自己点亮了新地图，知道自己该往什么方向努力。</p>
-<p>公主已经死去，屠龙的勇士还在燃烧！</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/01/HelloBlog/" itemprop="url">
-                  HelloBlog!
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-01T17:18:22+08:00" content="2016-04-01">
-              2016-04-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/01/HelloBlog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/01/HelloBlog/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-         
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>终于配置好了Hexo，说难不难，说简单也不简单。按照网上的教程一步一步下来如果顺利的话很简单，但是如果遇到一些版本问题，会有许多坑，让人抓狂。</p>
-<p>说起来早就想写博客了，不过迟迟没有动手。大概是嫌麻烦，也怕自己不能坚持下去。但是我现在觉得搞技术的如果怕麻烦，很难在这领域有所建树。而且通过写博客给自己的生活留下点痕迹，不然就像之前3年大学读下来感觉一片空白，也没啥能够记起来的。</p>
-<p>我是学前端开发的，喜欢的是当自己的代码从浏览器展现出来的那种享受。把自己生活学习中的经历通过文字记录在博客上在我看来也极好的。</p>
-<p>有些地方还没配置好，先发这篇文章看看效果。</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -743,6 +396,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/23/JavaScript-判断数组以及instanceof的局限性/"
+           data-title="JavaScript 判断数组以及instanceof的局限性" data-url="http://smileBug.github.io/2016/04/23/JavaScript-判断数组以及instanceof的局限性/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -762,8 +423,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -842,6 +512,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -961,6 +642,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
