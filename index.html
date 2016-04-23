@@ -328,16 +328,12 @@
 
       
         
-          
-            <h3 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h3><p>说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<p>与它类似的还有通过原型链判断数组：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.constructor == <span class="built_in">Array</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<p>用这两种方法来判断数组感觉很美好，但实际上是有漏洞的。</p>
-<h3 id="局限性："><a href="#局限性：" class="headerlink" title="局限性："></a>局限性：</h3><p>instanceof操作符与constructor属性的问题在于，它们都假定单一的全局执行环境。如果网页中多个框架，那实际上就存在两个以上不同的全局执行环境，从而就存在两个以上版本的Array构造函数。如果arr是另个框架定义的数组，那么上述两种方法就都会返回flase。</p>
-<h3 id="手动判断"><a href="#手动判断" class="headerlink" title="手动判断"></a>手动判断</h3><p>在任何值上调用Object原生的toString()方法，都会返回一个[object NativeConstructorName]格式的字符串。由于原生数组的构造函数名与全局作用域无关，因此使用toString()就能保证返回一致的值。通过Object.prototype.toString()和call()取得任何值的内置属性，把类型检测转换成字符串比较，最终达到检测目的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">value</span>)</span>&#123;    </span><br><span class="line"> <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(value) == <span class="string">'[object Array]'</span>;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(isArray(arr)); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<p>基于该思路同样也可以检测某个值是不是原生函数或正则表达式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">value</span>)</span>&#123;    </span><br><span class="line"> <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(value) == <span class="string">'[object Function]'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isRegExp</span>(<span class="params">value</span>)</span>&#123;    </span><br><span class="line"> <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(value) == <span class="string">'[object RegExp]'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="自动判断"><a href="#自动判断" class="headerlink" title="自动判断"></a>自动判断</h3><p>此外ECMAScript5新增了Array.isArray()方法。这个方法能自动判断某个值到底是不是数组，而不管它是在哪个全局执行环境中创建的。IE9+、 Firefox 4+、Safari 5+、Opera10.5+和Chrome都实现了这个方法。但是在IE8之前的版本是不支持的。</p>
-
-          
+          <h3 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h3><p>说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/23/JavaScript-判断数组以及instanceof的局限性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -454,12 +450,12 @@
 
       
         
-          
-            <p>昨天晚上躺在床上逛技术贴，发现一个叫做XX-Net的好东西，一时惊为天人，这不，今天早上一起我就迫不及待Download下来看看。弄完试了下的确还不错，装个插件后浏览墙内墙外的网站它自己能够自动切换很方便。</p>
-<p>Github上的地址：<a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">https://github.com/XX-net/XX-Net</a><br>里面文档介绍的配置方法很详细，稍微折腾下就可以了。</p>
-<p>之前翻墙用的是<a href="http://www.fqjiasu.com/" target="_blank" rel="external">ShadowSocks</a>，也蛮好用的。最低只需要6块钱一个月，不过有5个G的使用上限。</p>
-
-          
+          <p>昨天晚上躺在床上逛技术贴，发现一个叫做XX-Net的好东西，一时惊为天人，这不，今天早上一起我就迫不及待Download下来看看。弄完试了下的确还不错，装个插件后浏览墙内墙外的网站它自己能够自动切换很方便。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/20/一把梯子/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -576,14 +572,12 @@
 
       
         
-          
-            <p>打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。</p>
-<p>整个3月份参加了三场笔试，有腾讯，网易和360。三场考试下来，我觉得网易的试题是最好的，倒不是说我答的多好，而是它最让我感受到我是在答前端的笔试。因为学习时间短，知识积累不足，三场笔试就过了360一家，就连过的那场也是踩着线过的。的确我在这知识储备这方面太不足了，总而言之，还是要多看书。</p>
-<p>这次360招前端流程比较复杂，笔试过了不是直接面试，而是穿插了一次项目作业和培训。而我递交的作业没能通过筛选，最后只能止步这一环节。现在想想挺可惜的，只恨当时做那份项目作业没能多思考多拓展一些细节，只想着早点交上去。不过说实在的，这份作业给了我许多体会，让我感受到只是单单看书看资料是远远不够的，编程这玩意说白了还得靠项目实践，靠代码量。真应了那句 “无他，唯手熟尔”。</p>
-<p>尽管这次没能得到一个理想的结果，但是我也从中感受到了自己离目标的差距，也算为自己点亮了新地图，知道自己该往什么方向努力。</p>
-<p>公主已经死去，屠龙的勇士还在燃烧！</p>
-
-          
+          <p>打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/16/关于实习校招/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -700,13 +694,12 @@
 
       
         
-          
-            <p>终于配置好了Hexo，说难不难，说简单也不简单。按照网上的教程一步一步下来如果顺利的话很简单，但是如果遇到一些版本问题，会有许多坑，让人抓狂。</p>
-<p>说起来早就想写博客了，不过迟迟没有动手。大概是嫌麻烦，也怕自己不能坚持下去。但是我现在觉得搞技术的如果怕麻烦，很难在这领域有所建树。而且通过写博客给自己的生活留下点痕迹，不然就像之前3年大学读下来感觉一片空白，也没啥能够记起来的。</p>
-<p>我是学前端开发的，喜欢的是当自己的代码从浏览器展现出来的那种享受。把自己生活学习中的经历通过文字记录在博客上在我看来也极好的。</p>
-<p>有些地方还没配置好，先发这篇文章看看效果。</p>
-
-          
+          <p>终于配置好了Hexo，说难不难，说简单也不简单。按照网上的教程一步一步下来如果顺利的话很简单，但是如果遇到一些版本问题，会有许多坑，让人抓狂。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/01/HelloBlog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

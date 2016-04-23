@@ -80,19 +80,16 @@
 
 
 
-<meta name="description" content="检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true
-与它类似的还有通过原型链判断数组：12var arr = [1,2,3];console.lo">
+<meta name="description" content="检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 判断数组以及instanceof的局限性">
 <meta property="og:url" content="http://smileBug.github.io/2016/04/23/JavaScript-判断数组以及instanceof的局限性/index.html">
 <meta property="og:site_name" content="拾荒岁月">
-<meta property="og:description" content="检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true
-与它类似的还有通过原型链判断数组：12var arr = [1,2,3];console.lo">
-<meta property="og:updated_time" content="2016-04-23T08:03:24.238Z">
+<meta property="og:description" content="检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true">
+<meta property="og:updated_time" content="2016-04-23T08:14:42.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 判断数组以及instanceof的局限性">
-<meta name="twitter:description" content="检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true
-与它类似的还有通过原型链判断数组：12var arr = [1,2,3];console.lo">
+<meta name="twitter:description" content="检测数组说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：12var arr = [1,2,3];console.log(arr instanceof Array) //true">
 
 
 
@@ -329,6 +326,7 @@
 
       
         <h3 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h3><p>说到JavaScript里的数组检测，你也许会马上想到用instanceof判断。的确对于一个网页，或者一个全局作用域而言，使用instanceof操作符 就能得到满意的结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>与它类似的还有通过原型链判断数组：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.constructor == <span class="built_in">Array</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
 <p>用这两种方法来判断数组感觉很美好，但实际上是有漏洞的。</p>
 <h3 id="局限性："><a href="#局限性：" class="headerlink" title="局限性："></a>局限性：</h3><p>instanceof操作符与constructor属性的问题在于，它们都假定单一的全局执行环境。如果网页中多个框架，那实际上就存在两个以上不同的全局执行环境，从而就存在两个以上版本的Array构造函数。如果arr是另个框架定义的数组，那么上述两种方法就都会返回flase。</p>
