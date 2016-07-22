@@ -80,16 +80,16 @@
 
 
 
-<meta name="description" content="##作用域作用域是一套用于确定在何处以及如何查找变量的规则。">
+<meta name="description" content="作用域作用域是一套用于确定在何处以及如何查找变量的规则。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 作用域变量查询">
 <meta property="og:url" content="http://smileBug.github.io/2016/07/20/你不知道的JavaScript之作用域/index.html">
 <meta property="og:site_name" content="拾荒岁月">
-<meta property="og:description" content="##作用域作用域是一套用于确定在何处以及如何查找变量的规则。">
-<meta property="og:updated_time" content="2016-07-22T11:09:11.489Z">
+<meta property="og:description" content="作用域作用域是一套用于确定在何处以及如何查找变量的规则。">
+<meta property="og:updated_time" content="2016-07-22T11:20:47.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 作用域变量查询">
-<meta name="twitter:description" content="##作用域作用域是一套用于确定在何处以及如何查找变量的规则。">
+<meta name="twitter:description" content="作用域作用域是一套用于确定在何处以及如何查找变量的规则。">
 
 
 
@@ -325,12 +325,12 @@
       
 
       
-        <p>##作用域<br>作用域是一套用于确定在何处以及如何查找变量的规则。<br><a id="more"></a></p>
-<p>###变量查询<br>如果查找的目的是为了对变量进行赋值，则会使用LHS查询；如果查找的目的是为了获取变量的值，则会使用RHS查询。其中“L”和“R”的含义不难猜测，它们分别代表左侧和右侧。换句话说，当变量出现在赋值操作的左边进行LHS查询，出现在右侧时进行RHS查询。</p>
+        <h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域是一套用于确定在何处以及如何查找变量的规则。<br><a id="more"></a></p>
+<h3 id="变量查询"><a href="#变量查询" class="headerlink" title="变量查询"></a>变量查询</h3><p>如果查找的目的是为了对变量进行赋值，则会使用LHS查询；如果查找的目的是为了获取变量的值，则会使用RHS查询。其中“L”和“R”的含义不难猜测，它们分别代表左侧和右侧。换句话说，当变量出现在赋值操作的左边进行LHS查询，出现在右侧时进行RHS查询。</p>
 <p>例如代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>，</span><br><span class="line">    b = a;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure></p>
 <p>其中对于“var a = 3”js引擎会为等号左边变量a进行LHS查询，试图找到变量的容器本身，从而可以对其赋值；而对于“b = a”中等号右边的变量a则是进行RHS查询，可以理解“取得a的值”，然后赋值给变量b；最后对于“console.log(a)”中对于变量a也是进行RHS查询，并且将得到的值传给console.log(..)执行。<br>所以最好将其理解成“给谁进行赋值操作（LHS）”以及“获取谁的值（RHS）”</p>
-<p>###作用域嵌套<br>当一个函数嵌套在另一个函数中时，就会发生作用域的嵌套。因此，在当前作用域中无法找到某个变量时，引擎就会在外层嵌套的作用域中继续查找，直到找到该变量，或抵达最外层作用域（也就是全局作用域）为止。</p>
-<p>###异常<br>区分LHS与RHS是很重要的，因为在变量还没有声明的情况下，这两种查询行为是不一样的。<br>考虑如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">    b = a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="作用域嵌套"><a href="#作用域嵌套" class="headerlink" title="作用域嵌套"></a>作用域嵌套</h3><p>当一个函数嵌套在另一个函数中时，就会发生作用域的嵌套。因此，在当前作用域中无法找到某个变量时，引擎就会在外层嵌套的作用域中继续查找，直到找到该变量，或抵达最外层作用域（也就是全局作用域）为止。</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>区分LHS与RHS是很重要的，因为在变量还没有声明的情况下，这两种查询行为是不一样的。<br>考虑如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">    b = a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
 <p>在“console.log(a + b)”中第一次对b进行RHS查询是无法找到改变量的。此时b还未声明，浏览器会抛出ReferenceError（引用错误）异常；而在“b = a”中对b执行LHS查询，在全局作用域中也无法找到目标变量，就会创建一个名为b的全局变量，并将其返还给引擎，前提是在非“严格模式”下。如果在“严格模式”下，也会抛出ReferenceError异常。</p>
 
       
@@ -514,7 +514,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">1.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量查询"><span class="nav-number">2.</span> <span class="nav-text">变量查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域嵌套"><span class="nav-number">3.</span> <span class="nav-text">作用域嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">4.</span> <span class="nav-text">异常</span></a></li></ol></div>
             
           </div>
         </section>
