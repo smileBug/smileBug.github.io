@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <script type="text/javascript" src="script/text.js"></script>
+  <title>万年历</title>
+</head>
+<body onload="initial()">
+  <header>
+    <h1>万年历演示</h1>
+  </header>
+  <div id="warper">
+    <header id="time_set">
+      <!-- 年份设置 -->
+      <div id="new_year">
+        <div id="year_up" onclick="pushBtm('YU')"><</div>
+      <select name="select_year" id="set_year" onchange="changeCld()">
+        <option>1900年</option>
+        <option>1901年</option>
+        <option>1902年</option>
+        <option>1903年</option>
+        <option>1904年</option>
+        <option>1905年</option>
+        <option>1906年</option>
+        <option>1907年</option>
+        <option>1908年</option>
+        <option>1909年</option>
+        <option>1910年</option>
+        <option>1911年</option>
+        <option>1912年</option>
+        <option>1913年</option>
+        <option>1914年</option>
+        <option>1915年</option>
+        <option>1916年</option>
+        <option>1917年</option>
+        <option>1918年</option>
+        <option>1919年</option>
+        <option>1920年</option>
+        <option>1921年</option>
+        <option>1922年</option>
+        <option>1923年</option>
+        <option>1924年</option>
+        <option>1925年</option>
+        <option>1926年</option>
+        <option>1927年</option>
+        <option>1928年</option>
+        <option>1929年</option>
+        <option>1930年</option>
+        <option>1931年</option>
+        <option>1932年</option>
+        <option>1933年</option>
+        <option>1934年</option>
+        <option>1935年</option>
+        <option>1936年</option>
+        <option>1937年</option>
+        <option>1938年</option>
+        <option>1939年</option>
+        <option>1940年</option>
+        <option>1941年</option>
+        <option>1942年</option>
+        <option>1943年</option>
+        <option>1944年</option>
+        <option>1945年</option>
+        <option>1946年</option>
+        <option>1947年</option>
+        <option>1948年</option>
+        <option>1949年</option>
+        <option>1950年</option>
+        <option>1951年</option>
+        <option>1952年</option>
+        <option>1953年</option>
+        <option>1954年</option>
+        <option>1955年</option>
+        <option>1956年</option>
+        <option>1957年</option>
+        <option>1958年</option>
+        <option>1959年</option>
+        <option>1960年</option>
+        <option>1961年</option>
+        <option>1962年</option>
+        <option>1963年</option>
+        <option>1964年</option>
+        <option>1965年</option>
+        <option>1966年</option>
+        <option>1967年</option>
+        <option>1968年</option>
+        <option>1969年</option>
+        <option>1970年</option>
+        <option>1971年</option>
+        <option>1972年</option>
+        <option>1973年</option>
+        <option>1974年</option>
+        <option>1975年</option>
+        <option>1976年</option>
+        <option>1977年</option>
+        <option>1978年</option>
+        <option>1979年</option>
+        <option>1980年</option>
+        <option>1981年</option>
+        <option>1982年</option>
+        <option>1983年</option>
+        <option>1984年</option>
+        <option>1985年</option>
+        <option>1986年</option>
+        <option>1987年</option>
+        <option>1988年</option>
+        <option>1989年</option>
+        <option>1990年</option>
+        <option>1991年</option>
+        <option>1992年</option>
+        <option>1993年</option>
+        <option>1994年</option>
+        <option>1995年</option>
+        <option>1996年</option>
+        <option>1997年</option>
+        <option>1998年</option>
+        <option>1999年</option>
+        <option>2000年</option>
+        <option>2001年</option>
+        <option>2002年</option>
+        <option>2003年</option>
+        <option>2004年</option>
+        <option>2005年</option>
+        <option>2006年</option>
+        <option>2007年</option>
+        <option>2008年</option>
+        <option>2009年</option>
+        <option>2010年</option>
+        <option>2011年</option>
+        <option>2012年</option>
+        <option>2013年</option>
+        <option>2014年</option>
+        <option>2015年</option>
+        <option>2016年</option>
+        <option>2017年</option>
+        <option>2018年</option>
+        <option>2019年</option>
+        <option>2020年</option>
+        <option>2021年</option>
+        <option>2022年</option>
+        <option>2023年</option>
+        <option>2024年</option>
+        <option>2025年</option>
+        <option>2026年</option>
+        <option>2027年</option>
+        <option>2028年</option>
+        <option>2029年</option>
+        <option>2030年</option>
+        <option>2031年</option>
+        <option>2032年</option>
+        <option>2033年</option>
+        <option>2034年</option>
+        <option>2035年</option>
+        <option>2036年</option>
+        <option>2037年</option>
+        <option>2038年</option>
+        <option>2039年</option>
+        <option>2040年</option>
+        <option>2041年</option>
+        <option>2042年</option>
+        <option>2043年</option>
+        <option>2044年</option>
+        <option>2045年</option>
+        <option>2046年</option>
+        <option>2047年</option>
+        <option>2048年</option>
+        <option>2049年</option>
+      </select>
+      <div id="year_down" onclick="pushBtm('YD')">></div>
+      </div>
+      <!-- 月份设置 -->
+      <div id="new_month">
+        <div id="month_up" onclick="pushBtm('MU')"><</div>
+      <select name="select_month" id="set_month" onchange="changeCld()">
+        <option>1月</option>
+        <option>2月</option>
+        <option>3月</option>
+        <option>4月</option>
+        <option>5月</option>
+        <option>6月</option>
+        <option>7月</option>
+        <option>8月</option>
+        <option>9月</option>
+        <option>10月</option>
+        <option>11月</option>
+        <option>12月</option>
+      </select>
+      <div id="month_down" onclick="pushBtm('MD')">></div>
+      </div>
+      <div id="back_today" onclick="pushBtm('')">当前月</div>
+      <!-- 返回干支信息 -->
+      <span id="gz">  </span>
+    </header>
+    <div id="main">
+    <!-- 左边显示主体 -->
+      <div id="calendar">
+        <table id="calendarhead">
+          <tr>
+            <td>日</td>
+            <td>一</td>
+            <td>二</td>
+            <td>三</td>
+            <td>四</td>
+            <td>五</td>
+            <td>六</td>
+          </tr>
+        </table>
+        <table id="week">
+          <tr class="tr1">
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(0)" onclick="showText(0)" id="sd0"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(1)" onclick="showText(1)" id="sd1"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(2)" onclick="showText(2)" id="sd2"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(3)" onclick="showText(3)" id="sd3"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(4)" onclick="showText(4)" id="sd4"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(5)" onclick="showText(5)" id="sd5"></td>
+            <td class="agreen" onmouseout="mOut()" onmouseover="mOvr(6)" onclick="showText(6)" id="sd6"></td>
+          </tr>
+          <tr class="tr2">
+            <td onmouseout="mOut()" onmouseover="mOvr(0)" id="ld0"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(1)" id="ld1"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(2)" id="ld2"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(3)" id="ld3"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(4)" id="ld4"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(5)" id="ld5"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(6)" id="ld6"></td>
+          </tr>
+          <tr class="tr1">
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(7)" onclick="showText(7)" id="sd7"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(8)" onclick="showText(8)" id="sd8"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(9)" onclick="showText(9)" id="sd9"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(10)" onclick="showText(10)" id="sd10"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(11)" onclick="showText(11)" id="sd11"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(12)" onclick="showText(12)" id="sd12"></td>
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(13)" onclick="showText(13)" id="sd13"></td>
+          </tr>
+          <tr class="tr2">
+            <td onmouseout="mOut()" onmouseover="mOvr(7)" id="ld7"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(8)" id="ld8"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(9)" id="ld9"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(10)" id="ld10"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(11)" id="ld11"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(12)" id="ld12"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(13)" id="ld13"></td>
+          </tr>
+          <tr class="tr1">
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(14)" onclick="showText(14)" id="sd14"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(15)" onclick="showText(15)" id="sd15"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(16)" onclick="showText(16)" id="sd16"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(17)" onclick="showText(17)" id="sd17"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(18)" onclick="showText(18)" id="sd18"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(19)" onclick="showText(19)" id="sd19"></td>
+            <td class="agreen" onmouseout="mOut()" onmouseover="mOvr(20)" onclick="showText(20)" id="sd20"></td>
+          </tr>
+          <tr class="tr2">
+            <td onmouseout="mOut()" onmouseover="mOvr(14)" id="ld14"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(15)" id="ld15"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(16)" id="ld16"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(17)" id="ld17"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(18)" id="ld18"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(19)" id="ld19"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(20)" id="ld20"></td>
+          </tr>
+          <tr class="tr1">
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(21)" onclick="showText(21)" id="sd21"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(22)" onclick="showText(22)" id="sd22"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(23)" onclick="showText(23)" id="sd23"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(24)" onclick="showText(24)" id="sd24"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(25)" onclick="showText(25)" id="sd25"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(26)" onclick="showText(26)" id="sd26"></td>
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(27)" onclick="showText(27)" id="sd27"></td>
+          </tr>
+          <tr class="tr2">
+            <td onmouseout="mOut()" onmouseover="mOvr(21)" id="ld21"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(22)" id="ld22"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(23)" id="ld23"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(24)" id="ld24"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(25)" id="ld25"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(26)" id="ld26"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(27)" id="ld27"></td>
+          </tr>
+          <tr class="tr1">
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(28)" onclick="showText(28)" id="sd28"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(29)" onclick="showText(29)" id="sd29"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(30)" onclick="showText(30)" id="sd30"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(31)" onclick="showText(31)" id="sd31"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(32)" onclick="showText(32)" id="sd32"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(33)" onclick="showText(33)" id="sd33"></td>
+            <td class="agreen" onmouseout="mOut()" onmouseover="mOvr(34)" onclick="showText(34)" id="sd34"></td>
+          </tr>
+          <tr class="tr2">
+            <td onmouseout="mOut()" onmouseover="mOvr(28)" id="ld28"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(29)" id="ld29"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(30)" id="ld30"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(31)" id="ld31"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(32)" id="ld32"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(33)" id="ld33"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(34)" id="ld34"></td>
+          </tr>
+          <tr class="tr1">
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(35)" onclick="showText(35)" id="sd35"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(36)" onclick="showText(36)" id="sd36"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(37)" onclick="showText(37)" id="sd37"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(38)" onclick="showText(38)" id="sd38"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(39)" onclick="showText(39)" id="sd39"></td>
+            <td class="one" onmouseout="mOut()" onmouseover="mOvr(40)" onclick="showText(40)" id="sd40"></td>
+            <td class="aorange" onmouseout="mOut()" onmouseover="mOvr(41)" onclick="showText(41)" id="sd41"></td>
+          </tr>
+          <tr class="tr2">
+            <td onmouseout="mOut()" onmouseover="mOvr(35)" id="ld35"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(36)" id="ld36"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(37)" id="ld37"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(38)" id="ld38"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(39)" id="ld39"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(40)" id="ld40"></td>
+            <td onmouseout="mOut()" onmouseover="mOvr(41)" id="ld41"></td>
+          </tr>
+        </table>
+      </div>
+      <!-- 右边显示具体信息 -->
+      <div id="main_right">
+        <div id="detail">
+          <div id="datedetail"></div>
+          <div id="festival"></div>
+        </div>
+        <div id='selectDay'>
+        </div>
+        <div id="holiday"></div>
+        <div id="illustrate"><span style="color: #ffd700">黄色</span>表示当前日期<br><span style="color: #1874cd">蓝色</span>表示公历节日<br><span style="color: #00cd00">绿色</span>表示农历节日<br><span style="color: #ee2c2c">红色</span>表示节气</div>
+      </div>
+    </div>
+    <br style="clear:both;" />
+  </div>
+</body>
+</html>
