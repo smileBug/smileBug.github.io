@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog," />
+  <meta name="keywords" content="this," />
 
 
 
@@ -80,16 +80,16 @@
 
 
 
-<meta name="description" content="打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。">
+<meta name="description" content="关于this为什么要用this？当然是因为使用它更方便，更优雅啊。不然谁吃饱了撑着花这么多时间去理解这么复杂的玩意！this提供了一种更优雅的方式来隐式“传递”一个对象引用，因此可以将API设计的更加简洁并且易于复用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于实习校招">
-<meta property="og:url" content="http://smileBug.github.io/2016/04/16/关于实习校招/index.html">
+<meta property="og:title" content="JavaScript 关于this">
+<meta property="og:url" content="http://smileBug.github.io/2016/07/23/JavaScript-关于this/index.html">
 <meta property="og:site_name" content="拾荒岁月">
-<meta property="og:description" content="打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。">
-<meta property="og:updated_time" content="2016-04-23T08:14:53.054Z">
+<meta property="og:description" content="关于this为什么要用this？当然是因为使用它更方便，更优雅啊。不然谁吃饱了撑着花这么多时间去理解这么复杂的玩意！this提供了一种更优雅的方式来隐式“传递”一个对象引用，因此可以将API设计的更加简洁并且易于复用。">
+<meta property="og:updated_time" content="2016-07-23T09:31:28.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于实习校招">
-<meta name="twitter:description" content="打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。">
+<meta name="twitter:title" content="JavaScript 关于this">
+<meta name="twitter:description" content="关于this为什么要用this？当然是因为使用它更方便，更优雅啊。不然谁吃饱了撑着花这么多时间去理解这么复杂的玩意！this提供了一种更优雅的方式来隐式“传递”一个对象引用，因此可以将API设计的更加简洁并且易于复用。">
 
 
 
@@ -107,7 +107,7 @@
   };
 </script>
 
-  <title> 关于实习校招 | 拾荒岁月 </title>
+  <title> JavaScript 关于this | 拾荒岁月 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +257,7 @@
             
             
               
-                关于实习校招
+                JavaScript 关于this
               
             
           </h1>
@@ -269,8 +269,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-16T17:16:23+08:00" content="2016-04-16">
-              2016-04-16
+            <time itemprop="dateCreated" datetime="2016-07-23T15:15:29+08:00" content="2016-07-23">
+              2016-07-23
             </time>
           </span>
 
@@ -283,8 +283,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
                   </a>
                 </span>
 
@@ -299,8 +299,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/16/关于实习校招/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/关于实习校招/" itemprop="commentsCount"></span>
+                <a href="/2016/07/23/JavaScript-关于this/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/23/JavaScript-关于this/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,11 +325,31 @@
       
 
       
-        <p>打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。<br><a id="more"></a></p>
-<p>整个3月份参加了三场笔试，有腾讯，网易和360。三场考试下来，我觉得网易的试题是最好的，倒不是说我答的多好，而是它最让我感受到我是在答前端的笔试。因为学习时间短，知识积累不足，三场笔试就过了360一家，就连过的那场也是踩着线过的。的确我在这知识储备这方面太不足了，总而言之，还是要多看书。</p>
-<p>这次360招前端流程比较复杂，笔试过了不是直接面试，而是穿插了一次项目作业和培训。而我递交的作业没能通过筛选，最后只能止步这一环节。现在想想挺可惜的，只恨当时做那份项目作业没能多思考多拓展一些细节，只想着早点交上去。不过说实在的，这份作业给了我许多体会，让我感受到只是单单看书看资料是远远不够的，编程这玩意说白了还得靠项目实践，靠代码量。真应了那句 “无他，唯手熟尔”。</p>
-<p>尽管这次没能得到一个理想的结果，但是我也从中感受到了自己离目标的差距，也算为自己点亮了新地图，知道自己该往什么方向努力。</p>
-<p>公主已经死去，屠龙的勇士还在燃烧！</p>
+        <h2 id="关于this"><a href="#关于this" class="headerlink" title="关于this"></a>关于this</h2><p>为什么要用this？当然是因为使用它更方便，更优雅啊。不然谁吃饱了撑着花这么多时间去理解这么复杂的玩意！this提供了一种更优雅的方式来隐式“传递”一个对象引用，因此可以将API设计的更加简洁并且易于复用。<br><a id="more"></a><br>学习this首先要明白this既不指向函数自身也不指向函数的词法作用域。而且this的绑定实际上是在函数被调用时发生的，它的指向完全取决于函数在哪里被调用。</p>
+<h2 id="绑定规则"><a href="#绑定规则" class="headerlink" title="绑定规则"></a>绑定规则</h2><p>如何判断一个运行中函数的this绑定，就需要先找到这个函数的具体调用位置，然后根据绑定规则来判断this的绑定对象。绑定规则有默认绑定、隐式绑定、显示绑定和new绑定。</p>
+<h3 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h3><p>纯粹的函数调用，直接使用不带任何修饰的函数引用进行调用。此时this就指向全局对象。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">foo();  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>函数foo()调用时应用了this的默认绑定，因此this绑定的全局对象。</p>
+<blockquote>
+<p>注意： 如果使用严格模式，则不能将全局对象用于默认绑定，因此this会绑定到undefined。</p>
+</blockquote>
+<h3 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h3><p>当函数作为某个对象的方法被调用时，此时this被绑定到这个上下文对象上。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo();  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>当foo()被调用时，它前面加上了对obj的引用。即实际上是调用了obj对象的foo()方法。此时this被绑定到obj，因此this.a和obj.a是一样的。</p>
+<p>如果被隐式绑定的函数丢失了绑定对象，就会应用默认绑定，从而把this绑定到全局对象或者undefin上，取决于是否为严格模式。<br>例如上述例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bar = obj.foo;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"global"</span>;</span><br><span class="line">bar();  <span class="comment">// "global"</span></span><br></pre></td></tr></table></figure></p>
+<p>这里的bar实际上引用的是foo函数本身，所以此时bar()其实是不带任何修饰的函数调用，因此应用了默认绑定。同理回调函数也是会丢失this绑定。</p>
+<h3 id="显式绑定"><a href="#显式绑定" class="headerlink" title="显式绑定"></a>显式绑定</h3><p>在隐式绑定中，我们必须设置一个对象的内部方法指向所要执行的函数，并通过这个方法间接引用该函数，从而把this隐式绑定到这个对象上。<br>而在显示绑定中，我们只需要通过apply()和call()方法直接在某个对象上强制调用所要执行的函数。<br>这两个方法的第一个参数是一个对象(参数为空时，默认调用全局对象)，是为this准备的，接着在调用函数时将其绑定给this。由于可以直接制定this的绑定对象，故称之为显式绑定。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line">foo.call(obj);  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>通过foo.call(…),在调用foo函数时强制把它的this绑定到obj上。</p>
+<p>但是，显示绑定仍然存在丢失绑定问题</p>
+<h3 id="new绑定"><a href="#new绑定" class="headerlink" title="new绑定"></a>new绑定</h3><p>使用new来调用函数，即构造函数调用，创建一个新对象，此时，this就指向这个新对象。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> foo(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(bar.a);  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>###判断this绑定对象<br>综上所述，如果要判断一个运行中函数的this绑定，就需要找到这个函数的直接调用位置。找到后按顺序通过下面四条规则来判定this的绑定对象。</p>
+<ol>
+<li>是否由new调用？绑定到新创建的对象上。</li>
+<li>是否由apply或者call调用？绑定到指定对象是。</li>
+<li>是否作为上下文对象方法调用？绑定到那个上下文对象。</li>
+<li>默认：在严格模式下绑定undefined，否则绑定的全局对象。</li>
+</ol>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>ES6中介绍了一种无法使用以上规则的特殊函数类型：箭头函数。<br>箭头函数并不是用function关键字定义的，而是使用操作符“=&gt;”定义的，其this指向根据当前词法作用域来决定的。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a) =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    a: <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> bar = foo.call(obj1);</span><br><span class="line">bar.call(obj2);  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>foo()内部创建的箭头函数会捕获调用foo()时的this，由于foo()的this绑定到obj1，所以箭头函数的this也会绑定到obj1。此外，箭头函数的绑定无法被修改。(new也不行)</p>
+<h2 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h2><p>1.你不知道的JavaScript（上卷）</p>
 
       
     </div>
@@ -350,7 +370,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag">#blog</a>
+            <a href="/tags/this/" rel="tag">#this</a>
           
         </div>
       
@@ -359,17 +379,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/01/HelloBlog/" rel="next" title="HelloBlog!">
-                <i class="fa fa-chevron-left"></i> HelloBlog!
+              <a href="/2016/07/20/JavaScript 作用域变量查询/" rel="next" title="JavaScript 作用域变量查询">
+                <i class="fa fa-chevron-left"></i> JavaScript 作用域变量查询
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/20/一把梯子/" rel="prev" title="一把梯子">
-                一把梯子 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -395,8 +411,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/16/关于实习校招/"
-           data-title="关于实习校招" data-url="http://smileBug.github.io/2016/04/16/关于实习校招/">
+      <div class="ds-thread" data-thread-key="2016/07/23/JavaScript-关于this/"
+           data-title="JavaScript 关于this" data-url="http://smileBug.github.io/2016/07/23/JavaScript-关于this/">
       </div>
     
   </div>
@@ -516,7 +532,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于this"><span class="nav-number">1.</span> <span class="nav-text">关于this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定规则"><span class="nav-number">2.</span> <span class="nav-text">绑定规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认绑定"><span class="nav-number">2.1.</span> <span class="nav-text">默认绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式绑定"><span class="nav-number">2.2.</span> <span class="nav-text">隐式绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显式绑定"><span class="nav-number">2.3.</span> <span class="nav-text">显式绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new绑定"><span class="nav-number">2.4.</span> <span class="nav-text">new绑定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数"><span class="nav-number">3.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料参考"><span class="nav-number">4.</span> <span class="nav-text">资料参考</span></a></li></ol></div>
             
           </div>
         </section>
