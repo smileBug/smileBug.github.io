@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog," />
+  <meta name="keywords" content="闭包," />
 
 
 
@@ -80,16 +80,19 @@
 
 
 
-<meta name="description" content="打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。">
+<meta name="description" content="要想学好JavaScript有一道坎是无论如何都要迈过的，那就是闭包。它是JS中一个非常重要但又难以掌握的概念。
+闭包的定义让我们开门见山，什么是闭包？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于实习校招">
-<meta property="og:url" content="http://smileBug.github.io/2016/04/16/关于实习校招/index.html">
+<meta property="og:title" content="JavaScript 闭包">
+<meta property="og:url" content="http://smileBug.github.io/2016/07/26/JavaScript-闭包/index.html">
 <meta property="og:site_name" content="拾荒岁月">
-<meta property="og:description" content="打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。">
-<meta property="og:updated_time" content="2016-04-23T08:14:53.054Z">
+<meta property="og:description" content="要想学好JavaScript有一道坎是无论如何都要迈过的，那就是闭包。它是JS中一个非常重要但又难以掌握的概念。
+闭包的定义让我们开门见山，什么是闭包？">
+<meta property="og:updated_time" content="2016-07-27T10:33:48.035Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于实习校招">
-<meta name="twitter:description" content="打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。">
+<meta name="twitter:title" content="JavaScript 闭包">
+<meta name="twitter:description" content="要想学好JavaScript有一道坎是无论如何都要迈过的，那就是闭包。它是JS中一个非常重要但又难以掌握的概念。
+闭包的定义让我们开门见山，什么是闭包？">
 
 
 
@@ -107,7 +110,7 @@
   };
 </script>
 
-  <title> 关于实习校招 | 拾荒岁月 </title>
+  <title> JavaScript 闭包 | 拾荒岁月 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +260,7 @@
             
             
               
-                关于实习校招
+                JavaScript 闭包
               
             
           </h1>
@@ -269,38 +272,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-16T17:16:23+08:00" content="2016-04-16">
-              2016-04-16
+            <time itemprop="dateCreated" datetime="2016-07-26T17:35:35+08:00" content="2016-07-26">
+              2016-07-26
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/16/关于实习校招/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/关于实习校招/" itemprop="commentsCount"></span>
+                <a href="/2016/07/26/JavaScript-闭包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/JavaScript-闭包/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,11 +309,19 @@
       
 
       
-        <p>打3月起了解到好几家公司开始实习生招聘后，我就抱着试一试的态度陆陆续续投了几份简历。说来惭愧，可能也是自己不够重视，怀着打酱油的心态，就连简历也没能好好准备。<br><a id="more"></a></p>
-<p>整个3月份参加了三场笔试，有腾讯，网易和360。三场考试下来，我觉得网易的试题是最好的，倒不是说我答的多好，而是它最让我感受到我是在答前端的笔试。因为学习时间短，知识积累不足，三场笔试就过了360一家，就连过的那场也是踩着线过的。的确我在这知识储备这方面太不足了，总而言之，还是要多看书。</p>
-<p>这次360招前端流程比较复杂，笔试过了不是直接面试，而是穿插了一次项目作业和培训。而我递交的作业没能通过筛选，最后只能止步这一环节。现在想想挺可惜的，只恨当时做那份项目作业没能多思考多拓展一些细节，只想着早点交上去。不过说实在的，这份作业给了我许多体会，让我感受到只是单单看书看资料是远远不够的，编程这玩意说白了还得靠项目实践，靠代码量。真应了那句 “无他，唯手熟尔”。</p>
-<p>尽管这次没能得到一个理想的结果，但是我也从中感受到了自己离目标的差距，也算为自己点亮了新地图，知道自己该往什么方向努力。</p>
-<p>公主已经死去，屠龙的勇士还在燃烧！</p>
+        <p>要想学好JavaScript有一道坎是无论如何都要迈过的，那就是闭包。它是JS中一个非常重要但又难以掌握的概念。</p>
+<h3 id="闭包的定义"><a href="#闭包的定义" class="headerlink" title="闭包的定义"></a>闭包的定义</h3><p>让我们开门见山，什么是闭包？<br><a id="more"></a><br>“闭包是指有权访问另一个函数作用域中的变量的函数。”这是《JavaScript高级程序设计》给出的定义。这句话很简单，但不好理解。让我们直接看例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line">foo();  <span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
+<p>首先，这是闭包吗？是，它是一个闭包。但它不能展示出闭包的特性。bar()对a的引用是基于词法作用域的查找规则，内部函数能访问外部作用域的变量。而下面这个例子就能很好地展示了闭包：<br><!-- more --><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> baz = foo();</span><br><span class="line">baz();  <span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
+<p>让我们先抛开闭包来看这段代码。首先，函数bar()能访问foo()的内部作用域中的变量a，没问题，这是基于词法作用域自里向外的查找规则。</p>
+<p>在foo()执行后，其返回值(也就是内部的bar()函数)赋值给了变量baz并调用了baz(),实际上只是通过不同的标识符(也就是这里的bar和baz)引用调用了内部的函数bar()。但是这是它自己定义的词法作用域以外的地方执行，讲道理它应该无权访问到变量a的值啊，为什么最后还是输出结果2了呢？所以这就是闭包神奇的地方！</p>
+<p>我们都知道JS的垃圾回收机制会释放不再使用的内存空间。看上去foo()的内容不再被使用，所以自然会考虑将其回收。而闭包“神奇”的地方就在于可以阻止这件事的发生。由于bar()声明在foo()内部，它拥有涵盖foo()内部作用域的闭包，使得该作用域能够一直存活，以供bar()在之后任何时刻引用。这个引用就是闭包！</p>
+<p>所以，无论通过何种手段将内部函数传递到所在词法作用域以外，他都会持有对原始作用域的引用，无论在何处执行这个函数都会使用闭包。</p>
+<h3 id="闭包与循环"><a href="#闭包与循环" class="headerlink" title="闭包与循环"></a>闭包与循环</h3><p>在循环中使用闭包会有一个坑。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);     <span class="comment">//6,6,6,6,6</span></span><br><span class="line">    &#125;,i*<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>按照正常的思维，我们会觉得这段代码运行结果是每秒一个地输出1~5，但实际上，这段代码在运行时会 以每秒一次的频率输出五次6。这就很奇怪了，为什么它会和我们所想的结果不一样呢？<br>原来尽管循环中的五个函数在每次循环中分别定义的，但它们都被封闭在一个共享的全局作用域中，因此实际上只有一个i，也就是循环满足终止条件时i的值6。<br>所以也就是说闭包只能取得包含函数中任何变量的最后一个值。</p>
+<p>那如何改造代码，让它向我们所期望的结果运行呢？看代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>)</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(j);     <span class="comment">//1,2,3,4,5</span></span><br><span class="line">        &#125;,j*<span class="number">1000</span>);</span><br><span class="line">    &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里我们通过声明并立即执行一个匿名函数来创建作用域。在调用每个匿名函数时，传入了变量i，由于函数参数是按值传递的，所以就会把变量i的当前值赋值给了j，从而产生了新的作用域，j的值是不会被循环改变的。这样一来每个函数都能获取到所对应的i的值。</p>
+<p>上述方法在每次循环中都创建了一个新的作用域。换句话说，要想得到所期望的结果，每次循环我们都需要一个块级作用域。而在ES6中的let声明，可以用来劫持块作用域，并且在这个块级作用域中声明一个变量。如代码所示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);     <span class="comment">//1,2,3,4,5</span></span><br><span class="line">    &#125;,i*<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过let声明，变量i在循环过程中不止被声明一次，每次循环都会声明，随后的每一次迭代都会使用上一个迭代结束时的值来初始化这个变量。本质上就是通过let声明在每次迭代都会生成一个新的作用域。</p>
 
       
     </div>
@@ -350,7 +342,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag">#blog</a>
+            <a href="/tags/闭包/" rel="tag">#闭包</a>
           
         </div>
       
@@ -359,17 +351,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/01/HelloBlog/" rel="next" title="HelloBlog!">
-                <i class="fa fa-chevron-left"></i> HelloBlog!
+              <a href="/2016/07/23/JavaScript-关于this/" rel="next" title="JavaScript 关于this">
+                <i class="fa fa-chevron-left"></i> JavaScript 关于this
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/20/一把梯子/" rel="prev" title="一把梯子">
-                一把梯子 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -395,8 +383,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/16/关于实习校招/"
-           data-title="关于实习校招" data-url="http://smileBug.github.io/2016/04/16/关于实习校招/">
+      <div class="ds-thread" data-thread-key="2016/07/26/JavaScript-闭包/"
+           data-title="JavaScript 闭包" data-url="http://smileBug.github.io/2016/07/26/JavaScript-闭包/">
       </div>
     
   </div>
@@ -516,7 +504,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包的定义"><span class="nav-number">1.</span> <span class="nav-text">闭包的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包与循环"><span class="nav-number">2.</span> <span class="nav-text">闭包与循环</span></a></li></ol></div>
             
           </div>
         </section>
