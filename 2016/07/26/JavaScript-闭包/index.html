@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="拾荒岁月">
 <meta property="og:description" content="要想学好JavaScript有一道坎是无论如何都要迈过的，那就是闭包。它是JS中一个非常重要但又难以掌握的概念。
 闭包的定义让我们开门见山，什么是闭包？">
-<meta property="og:updated_time" content="2016-07-27T10:36:44.851Z">
+<meta property="og:updated_time" content="2016-07-28T05:38:50.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 闭包">
 <meta name="twitter:description" content="要想学好JavaScript有一道坎是无论如何都要迈过的，那就是闭包。它是JS中一个非常重要但又难以掌握的概念。
@@ -341,6 +341,7 @@
 <p>这里我们通过声明并立即执行一个匿名函数来创建作用域。在调用每个匿名函数时，传入了变量i，由于函数参数是按值传递的，所以就会把变量i的当前值赋值给了j，从而产生了新的作用域，j的值是不会被循环改变的。这样一来每个函数都能获取到所对应的i的值。</p>
 <p>上述方法在每次循环中都创建了一个新的作用域。换句话说，要想得到所期望的结果，每次循环我们都需要一个块级作用域。而在ES6中的let声明，可以用来劫持块作用域，并且在这个块级作用域中声明一个变量。如代码所示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);     <span class="comment">//1,2,3,4,5</span></span><br><span class="line">    &#125;,i*<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>通过let声明，变量i在循环过程中不止被声明一次，每次循环都会声明，随后的每一次迭代都会使用上一个迭代结束时的值来初始化这个变量。本质上就是通过let声明在每次迭代都会生成一个新的作用域。</p>
+<h2 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h2><p>1.你不知道的JavaScript（上卷）<br>2.JavaScript高级程序设计（第3版）</p>
 
       
     </div>
@@ -377,6 +378,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/27/我们的征途是星辰大海！/" rel="prev" title="我们的征途是星辰大海！">
+                我们的征途是星辰大海！ <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -448,7 +453,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -465,7 +470,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -523,7 +528,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包的定义"><span class="nav-number">1.</span> <span class="nav-text">闭包的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包与循环"><span class="nav-number">2.</span> <span class="nav-text">闭包与循环</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包的定义"><span class="nav-number">1.</span> <span class="nav-text">闭包的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包与循环"><span class="nav-number">2.</span> <span class="nav-text">闭包与循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料参考"><span class="nav-number"></span> <span class="nav-text">资料参考</span></a></div>
             
           </div>
         </section>
