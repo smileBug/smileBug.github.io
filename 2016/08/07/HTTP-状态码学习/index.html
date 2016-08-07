@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://7xsb4y.com1.z0.glb.clouddn.com/404.jpg">
 <meta property="og:image" content="http://7xsb4y.com1.z0.glb.clouddn.com/500.jpg">
 <meta property="og:image" content="http://7xsb4y.com1.z0.glb.clouddn.com/503.jpg">
-<meta property="og:updated_time" content="2016-08-07T07:00:16.230Z">
+<meta property="og:updated_time" content="2016-08-07T07:27:36.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP 状态码学习（喵星人版）">
 <meta name="twitter:description" content="HTTP学习个人觉得作为一个有理想有抱负的前端工程师HTTP这块的知识是非常有必要掌握的，熟悉了HTTP协议，以后进行调试的时候，才能看明白捕获回来的HTTP请求，并且知道是不是其中某个地方有问题导致出现你想要修复的bug，如何处理能够最终修复这个bug。">
@@ -339,7 +339,44 @@
       
         <h2 id="HTTP学习"><a href="#HTTP学习" class="headerlink" title="HTTP学习"></a>HTTP学习</h2><p>个人觉得作为一个有理想有抱负的前端工程师HTTP这块的知识是非常有必要掌握的，熟悉了HTTP协议，以后进行调试的时候，才能看明白捕获回来的HTTP请求，并且知道是不是其中某个地方有问题导致出现你想要修复的bug，如何处理能够最终修复这个bug。<br><a id="more"></a></p>
 <h2 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h2><p>状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误。</p>
-<p>状态码由3位数字和原因短语组成，数字中第一位指定相应类别，后两位无分类，有以下5中响应类别。<br>| 状态码        | 类别   |  原因短语  |<br>| ——–   | :—–  | :—-  |<br>| 1XX     | Informational(信息性状态码) |   接受的请求正在处理     |<br>| 2XX        |   Success(成功状态码)   |   请求正常处理完毕  |<br>| 3XX       |    Redirection(重定向状态码)    |  需要进行附加操作以完成请求  |<br>| 4XX        |   Client Error(客户端错误状态码)   |   服务器无法处理请求   |<br>| 5XX        |   Server Error(服务器错误状态码)    |  服务器处理请求出错  |<br>网上看到HTTP趣味记法。通过ps了一系列的HTTP信息，让人印象深刻。<a href="http://rightyaleft.com/funhumor/http-status-codes-with-meooowwwwww-using-cat-photos/" target="_blank" rel="external">原文地址</a><br>原文状态码比较全，这里我只选取了部分比较正常常用的。</p>
+<p>状态码由3位数字和原因短语组成，数字中第一位指定相应类别，后两位无分类，有以下5中响应类别。</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1XX</td>
+<td style="text-align:left">Informational(信息性状态码)</td>
+<td style="text-align:left">接受的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td style="text-align:left">Success(成功状态码)</td>
+<td style="text-align:left">请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td style="text-align:left">Redirection(重定向状态码)</td>
+<td style="text-align:left">需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td style="text-align:left">Client Error(客户端错误状态码)</td>
+<td style="text-align:left">服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td style="text-align:left">Server Error(服务器错误状态码)</td>
+<td style="text-align:left">服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+<p>网上看到HTTP趣味记法。通过ps了一系列的HTTP信息，让人印象深刻。<a href="http://rightyaleft.com/funhumor/http-status-codes-with-meooowwwwww-using-cat-photos/" target="_blank" rel="external">原文地址</a><br>原文状态码比较全，这里我只选取了部分比较正常常用的。</p>
 <h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><p>2XX的响应结果表明请求被正常处理了。</p>
 <h3 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h3><p><img src="http://7xsb4y.com1.z0.glb.clouddn.com/200.jpg" alt=""><br>最常见的“200 OK”表示从客户端发来的请求在服务器端被正常处理了。</p>
 <h3 id="204-No-Content（无内容）"><a href="#204-No-Content（无内容）" class="headerlink" title="204 No Content（无内容）"></a>204 No Content（无内容）</h3><p><img src="http://7xsb4y.com1.z0.glb.clouddn.com/204.jpg" alt=""><br>该状态码代表请求已成功被服务器处理，但没有返回任何实体内容。</p>
