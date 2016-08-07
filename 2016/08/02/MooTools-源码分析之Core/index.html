@@ -1,0 +1,783 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="源码分析," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768(function()&amp;#123;	//代码被包在一个匿名函数的内部，所以这里的this明确指向全局对象。	//版本信息this.MooTools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MooTools 源码分析之Core (未完待续)">
+<meta property="og:url" content="http://smileBug.github.io/2016/08/02/MooTools-源码分析之Core/index.html">
+<meta property="og:site_name" content="拾荒岁月">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768(function()&amp;#123;	//代码被包在一个匿名函数的内部，所以这里的this明确指向全局对象。	//版本信息this.MooTools">
+<meta property="og:updated_time" content="2016-08-02T09:21:13.169Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MooTools 源码分析之Core (未完待续)">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768(function()&amp;#123;	//代码被包在一个匿名函数的内部，所以这里的this明确指向全局对象。	//版本信息this.MooTools">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6274875369640166000,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> MooTools 源码分析之Core (未完待续) | 拾荒岁月 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">拾荒岁月</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-javascript">
+          <a href="/javascript" rel="section">
+            
+              <i class="menu-item-icon fa fa-star fa-fw"></i> <br />
+            
+            个人项目
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/About" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MooTools 源码分析之Core (未完待续)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-02T17:04:55+08:00" content="2016-08-02">
+              2016-08-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MooTools/" itemprop="url" rel="index">
+                    <span itemprop="name">MooTools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/02/MooTools-源码分析之Core/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/MooTools-源码分析之Core/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+
+         
+           <span id="busuanzi_container_page_pv">&nbsp;&nbsp;|&nbsp;&nbsp;阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//代码被包在一个匿名函数的内部，所以这里的this明确指向全局对象。</span></span><br><span class="line">	<span class="comment">//版本信息</span></span><br><span class="line"><span class="keyword">this</span>.MooTools = &#123;</span><br><span class="line">	version: <span class="string">'1.6.0'</span>,</span><br><span class="line">	build: <span class="string">'529422872adfff401b901b8b6c7ca5114ee95e2b'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义了typeOf, instanceOf两个函数来替代JS原生的typeof和instanceof方法(注意大小写)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义typeOf方法(注意O大写！),在原生typeof的基础上做了拓展,判断参数类型</span></span><br><span class="line"><span class="keyword">var</span> typeOf = <span class="keyword">this</span>.typeOf = <span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//如果对象是null则返回null</span></span><br><span class="line">	<span class="keyword">if</span> (item == <span class="literal">null</span>) <span class="keyword">return</span> <span class="string">'null'</span>;</span><br><span class="line">	<span class="keyword">if</span> (item.$family != <span class="literal">null</span>) <span class="keyword">return</span> item.$family();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//判断node类型</span></span><br><span class="line">	<span class="keyword">if</span> (item.nodeName)&#123;</span><br><span class="line">		<span class="comment">//如果nodeType的值为1，则返回element</span></span><br><span class="line">		<span class="keyword">if</span> (item.nodeType == <span class="number">1</span>) <span class="keyword">return</span> <span class="string">'element'</span>;</span><br><span class="line">		<span class="comment">//如果nodeType的值为3，判断其有无值，选择返回值或者空白格</span></span><br><span class="line">		<span class="keyword">if</span> (item.nodeType == <span class="number">3</span>) <span class="keyword">return</span> (<span class="regexp">/\S/</span>).test(item.nodeValue) ? <span class="string">'textnode'</span> : <span class="string">'whitespace'</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> item.length == <span class="string">'number'</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="string">'callee'</span> <span class="keyword">in</span> item) <span class="keyword">return</span> <span class="string">'arguments'</span>;				<span class="comment">//如果有callee属性的则返回arguments</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="string">'item'</span> <span class="keyword">in</span> item) <span class="keyword">return</span> <span class="string">'collection'</span>;				<span class="comment">//如果有item属性的则返回collection</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//如果都不满足则返回原生JS typeof运算符的结果："undefined","boolean","string","number","object","function"</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">typeof</span> item;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义instanceOf方法(注意O大写！)，在原生instanceof的基础上做了拓展,判断某个对象是否是某个特定类型的实例</span></span><br><span class="line"><span class="keyword">var</span> instanceOf = <span class="keyword">this</span>.instanceOf = <span class="function"><span class="keyword">function</span>(<span class="params">item, object</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//如果对象为null则返回false</span></span><br><span class="line">	<span class="keyword">if</span> (item == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="comment">//定义constructor属性 判断是否可以追溯到object，如果可以则返回true</span></span><br><span class="line">	<span class="keyword">var</span> <span class="keyword">constructor</span> = item.$<span class="keyword">constructor</span> || item.<span class="keyword">constructor</span>;</span><br><span class="line">	while (<span class="keyword">constructor</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">constructor</span> === object) return true;</span><br><span class="line">		<span class="keyword">constructor</span> = <span class="keyword">constructor</span>.parent;</span><br><span class="line">	&#125;</span><br><span class="line">	/*&lt;ltIE8&gt;*/	//------------&gt;前后两个/*&lt;ltIE8&gt;*/表示为了兼容IE8.。。。。。。万恶的IE！！！</span><br><span class="line">	if (!item.hasOwnProperty) return false;</span><br><span class="line">	/*&lt;/ltIE8&gt;*/</span><br><span class="line">	//如果都不满足则返回原生JS typeof运算符的结果</span><br><span class="line">	return item instanceof object;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var hasOwnProperty = Object.prototype.hasOwnProperty;</span><br><span class="line"></span><br><span class="line">/*&lt;ltIE8&gt;*/</span><br><span class="line"></span><br><span class="line">var enumerables = true;</span><br><span class="line">//对IE中不能遍历对象中toString属性的bug做一个修正</span><br><span class="line">for (var i in &#123;toString: <span class="number">1</span>&#125;) enumerables = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">//如果遍历不到则enumerables为true，然后将这些属性暂存到一个数组保存到enumerables中</span></span><br><span class="line"><span class="keyword">if</span> (enumerables) enumerables = [<span class="string">'hasOwnProperty'</span>, <span class="string">'valueOf'</span>, <span class="string">'isPrototypeOf'</span>, <span class="string">'propertyIsEnumerable'</span>, <span class="string">'toLocaleString'</span>, <span class="string">'toString'</span>, <span class="string">'constructor'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//该函数就是传进object和bind两个对象和fn方法，首先遍历判断object对象里是否有enumberables数组中的那些属性，</span></span><br><span class="line"><span class="comment">//如果有则让bind对象执行fn方法，该方法传入k和object[k]两个参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEachObjectEnumberableKey</span>(<span class="params">object, fn, bind</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (enumerables) <span class="keyword">for</span> (<span class="keyword">var</span> i = enumerables.length; i--;)&#123;</span><br><span class="line">		<span class="keyword">var</span> k = enumerables[i];</span><br><span class="line">		<span class="comment">//hasOwnProperty.call(object, k) --&gt; object.hasOwnProperty(k) --&gt;object对象是否有自己的属性k</span></span><br><span class="line">		<span class="comment">//fn.call(bind, k, object[k]) --&gt; bind.fn(k,object[k]) --&gt;bind对象执行fn方法并传入参数k和object[k]</span></span><br><span class="line">		<span class="keyword">if</span> (hasOwnProperty.call(object, k)) fn.call(bind, k, object[k]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*&lt;/ltIE8&gt;*/</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/源码分析/" rel="tag">#源码分析</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/27/我们的征途是星辰大海！/" rel="next" title="我们的征途是星辰大海！">
+                <i class="fa fa-chevron-left"></i> 我们的征途是星辰大海！
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/07/HTTP-状态码学习/" rel="prev" title="HTTP 状态码学习（喵星人版）">
+                HTTP 状态码学习（喵星人版） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/02/MooTools-源码分析之Core/"
+           data-title="MooTools 源码分析之Core (未完待续)" data-url="http://smileBug.github.io/2016/08/02/MooTools-源码分析之Core/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="smileBug" />
+          <p class="site-author-name" itemprop="name">smileBug</p>
+          <p class="site-description motion-element" itemprop="description">如今最好，别说来日方长</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/smileBug" target="_blank" title="Github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3653738030" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/ye-mu-21" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">smileBug
+
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <script type="text/javascript">
+  var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258680453'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258680453' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  </span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+&nbsp;&nbsp;|&nbsp;&nbsp;本站总点击 <span id="busuanzi_value_site_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"smilebug"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
