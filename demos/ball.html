@@ -31,7 +31,7 @@
 		var ball2 = document.querySelector('.ball2');
 		var ball3 = document.querySelector('.ball3');
 
-		//定时器实现
+
 		function animate(ball,distance,callback){
 				setTimeout(function(){
 					var marginLeft = parseInt(ball.style.marginLeft);
@@ -52,23 +52,23 @@
 		}
 
 
-		animate(ball1,200,function(){
-			animate(ball2,100,function(){
-				animate(ball3,100,function(){
-					animate(ball3,200,function(){
-						animate(ball3,50,function(){
-							animate(ball1,50,function(){
-								animate(ball2,50,function(){
+		// animate(ball1,200,function(){
+		// 	animate(ball2,100,function(){
+		// 		animate(ball3,100,function(){
+		// 			animate(ball3,200,function(){
+		// 				animate(ball3,50,function(){
+		// 					animate(ball1,50,function(){
+		// 						animate(ball2,50,function(){
 
-								})
-							})
-						})
-					})
-				})
-			})
-		})
+		// 						})
+		// 					})
+		// 				})
+		// 			})
+		// 		})
+		// 	})
+		// })
 
-		// Promise实现
+
 		function promiseAnimate(ball,distance){
 			return new Promise(function(resolve,reject){
 				function _animate(){
