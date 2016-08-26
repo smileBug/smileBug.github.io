@@ -294,9 +294,9 @@ header .main li a.active{
 
 
 /*滚动广告*/
-.ad{
-    display: none;
-}
+/*.ad{*/
+    /*display: none;*/
+/*}*/
 
 /*平台特点*/
 .feature {
