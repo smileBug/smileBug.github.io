@@ -1,338 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
+  
   <url>
     <loc>http://smileBug.github.io/2016/08/20/JavaScript-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-    <lastmod>2016-08-21T09:22:44.625Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 正则表达式</title>
-        <pubTime>2016-08-20T09:10:46.000Z</pubTime>
-        
-        <tag>正则表达式 </tag>
-         
-         
-           
-             
-              <breadCrumb title="JS" url="http://smileBug.github.io/categories/JS/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-08-21T09:22:44.625Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/08/18/ES6%E4%B9%8BPromise/</loc>
-    <lastmod>2016-08-18T09:35:52.112Z</lastmod>
-    <data>
-        <display>
-        <title>ES6之Promise</title>
-        <pubTime>2016-08-18T08:47:59.000Z</pubTime>
-        
-        <tag>Promise </tag>
-         
-         
-           
-             
-              <breadCrumb title="ES6" url="http://smileBug.github.io/categories/ES6/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-08-18T09:35:52.112Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/08/11/I-have-a-dream/</loc>
-    <lastmod>2016-08-11T11:28:28.145Z</lastmod>
-    <data>
-        <display>
-        <title>I have a dream.</title>
-        <pubTime>2016-08-11T11:23:37.000Z</pubTime>
-        
-        <tag>-idea -红宝书 </tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="http://smileBug.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-08-11T11:28:28.145Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/08/08/%E6%98%AF%E6%97%B6%E5%80%99%E5%BC%80%E5%A7%8B%E4%B8%80%E9%97%A8%E5%90%8E%E7%AB%AF%E8%AF%AD%E8%A8%80%E4%BA%86/</loc>
-    <lastmod>2016-08-08T12:07:21.827Z</lastmod>
-    <data>
-        <display>
-        <title>是时候开始一门后端语言了</title>
-        <pubTime>2016-08-08T10:50:11.000Z</pubTime>
-        
-        <tag>学习 </tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="http://smileBug.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-08-08T12:07:21.827Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/08/07/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2016-08-07T07:27:36.527Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP 状态码学习（喵星人版）</title>
-        <pubTime>2016-08-07T05:31:45.000Z</pubTime>
-        
-        <tag>状态码 </tag>
-         
-        <tag>喵星人 </tag>
-         
-         
-           
-             
-              <breadCrumb title="HTTP" url="http://smileBug.github.io/categories/HTTP/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-08-07T07:27:36.527Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/08/02/MooTools-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8BCore/</loc>
-    <lastmod>2016-08-02T09:21:13.169Z</lastmod>
-    <data>
-        <display>
-        <title>MooTools 源码分析之Core (未完待续)</title>
-        <pubTime>2016-08-02T09:04:55.000Z</pubTime>
-        
-        <tag>源码分析 </tag>
-         
-         
-           
-             
-              <breadCrumb title="MooTools" url="http://smileBug.github.io/categories/MooTools/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-08-02T09:21:13.169Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/07/26/JavaScript-%E9%97%AD%E5%8C%85/</loc>
-    <lastmod>2016-07-28T05:38:50.370Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 闭包</title>
-        <pubTime>2016-07-26T09:35:35.000Z</pubTime>
-        
-        <tag>闭包 </tag>
-         
-         
-           
-             
-              <breadCrumb title="JS" url="http://smileBug.github.io/categories/JS/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-07-28T05:38:50.370Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/07/27/%E6%88%91%E4%BB%AC%E7%9A%84%E5%BE%81%E9%80%94%E6%98%AF%E6%98%9F%E8%BE%B0%E5%A4%A7%E6%B5%B7%EF%BC%81/</loc>
-    <lastmod>2016-07-27T12:09:34.533Z</lastmod>
-    <data>
-        <display>
-        <title>我们的征途是星辰大海！</title>
-        <pubTime>2016-07-27T12:06:53.000Z</pubTime>
-        
-        <tag>校招 </tag>
-         
-        <tag>梦想 </tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="http://smileBug.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-07-27T12:09:34.533Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/07/23/JavaScript-%E5%85%B3%E4%BA%8Ethis/</loc>
+    
     <lastmod>2016-07-26T10:57:05.894Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 关于this</title>
-        <pubTime>2016-07-23T07:15:29.000Z</pubTime>
-        
-        <tag>this </tag>
-         
-         
-           
-             
-              <breadCrumb title="JS" url="http://smileBug.github.io/categories/JS/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+  </url>
+  
+  <url>
+    <loc>http://smileBug.github.io/javascript/index.html</loc>
     
+    <lastmod>2016-07-23T11:21:23.666Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/07/20/JavaScript%20%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%8F%98%E9%87%8F%E6%9F%A5%E8%AF%A2/</loc>
-    <lastmod>2016-07-23T09:30:26.206Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 作用域变量查询</title>
-        <pubTime>2016-07-20T07:56:48.000Z</pubTime>
-        
-        <tag>作用域 </tag>
-         
-         
-           
-             
-              <breadCrumb title="JS" url="http://smileBug.github.io/categories/JS/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-07-23T09:30:26.206Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/04/23/JavaScript%20%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E4%BB%A5%E5%8F%8Ainstanceof%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/</loc>
+    
     <lastmod>2016-07-23T09:30:24.897Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 判断数组以及instanceof的局限性</title>
-        <pubTime>2016-04-23T06:13:52.000Z</pubTime>
-        
-        <tag>instanceof </tag>
-         
-        <tag>isArray </tag>
-         
-         
-           
-             
-              <breadCrumb title="JS" url="http://smileBug.github.io/categories/JS/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+  </url>
+  
+  <url>
+    <loc>http://smileBug.github.io/About/index.html</loc>
     
+    <lastmod>2016-07-22T11:34:01.543Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/07/17/%E7%95%99%E6%A0%A1%E4%BB%A5%E5%90%8E/</loc>
-    <lastmod>2016-07-17T08:06:34.066Z</lastmod>
-    <data>
-        <display>
-        <title>留校以后</title>
-        <pubTime>2016-07-17T08:04:23.000Z</pubTime>
-        
-        <tag>blog </tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="http://smileBug.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-07-17T08:06:34.066Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/05/12/%E5%9B%9E%E6%9C%9B/</loc>
-    <lastmod>2016-07-17T07:57:16.356Z</lastmod>
-    <data>
-        <display>
-        <title>回望</title>
-        <pubTime>2016-05-12T05:16:23.000Z</pubTime>
-        
-        <tag>blog </tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="http://smileBug.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-07-17T07:57:16.356Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/04/20/%E4%B8%80%E6%8A%8A%E6%A2%AF%E5%AD%90/</loc>
-    <lastmod>2016-04-23T08:15:03.148Z</lastmod>
-    <data>
-        <display>
-        <title>一把梯子</title>
-        <pubTime>2016-04-20T10:34:01.000Z</pubTime>
-        
-        <tag>翻墙 </tag>
-         
-        <tag>XX-Net </tag>
-         
-        <tag>ShadowSocks </tag>
-         
-         
-           
-             
-              <breadCrumb title="工具" url="http://smileBug.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-04-23T08:15:03.148Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/04/16/%E5%85%B3%E4%BA%8E%E5%AE%9E%E4%B9%A0%E6%A0%A1%E6%8B%9B/</loc>
-    <lastmod>2016-04-23T08:14:53.054Z</lastmod>
-    <data>
-        <display>
-        <title>关于实习校招</title>
-        <pubTime>2016-04-16T09:16:23.000Z</pubTime>
-        
-        <tag>blog </tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="http://smileBug.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2016-04-23T08:14:53.054Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://smileBug.github.io/2016/04/01/HelloBlog/</loc>
+    
     <lastmod>2016-04-23T08:12:58.344Z</lastmod>
-    <data>
-        <display>
-        <title>HelloBlog!</title>
-        <pubTime>2016-04-01T09:18:22.000Z</pubTime>
-        
-        <tag>blog </tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="http://smileBug.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
+  </url>
+  
+  <url>
+    <loc>http://smileBug.github.io/categories/index.html</loc>
     
+    <lastmod>2016-04-19T11:50:51.431Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://smileBug.github.io/tags/index.html</loc>
+    
+    <lastmod>2016-04-19T11:47:01.896Z</lastmod>
+    
+  </url>
+  
 </urlset>
