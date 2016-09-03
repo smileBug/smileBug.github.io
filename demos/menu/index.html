@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<link rel="stylesheet" href="normalize.css">
+	<script src="jquery.js"></script>
+	<style>
+		/*公告样式*/
+		html{
+			font-size: 62.5%;
+			font-family: Microsoft YaHei;
+			color: #222;
+		}
+		.container{
+			width: 60rem;
+			height: 4rem;
+			margin: 1rem auto 15rem;
+		}
+		a{
+			text-decoration: none;
+			color: #000;
+		}
+		h2{
+			font-size: 2rem;
+			text-align: center;
+		}
+		ul{
+			list-style: none;
+		}
+		.first_menu{
+			font-size: 0;
+		}
+		.first_menu > li{
+			display: inline-block;
+			position: relative;
+		}
+		.first_menu > li:first-child{
+			background-color: #fc6731;
+			border-radius: 5px;
+		}
+		.first_menu > li > a{
+			display: block;
+			width: 9rem;
+			height: 4rem;
+			border-radius: 5px;
+			font-size: 1.6rem;
+			text-align: center;
+			line-height: 4rem;
+		}
+		.first_menu > li > a:hover{
+			background-color: #fc6731;
+		}
+
+		.second_menu{
+			position: absolute;
+			display: none;
+			left: 0;
+			top: 4rem;
+			padding: 1rem 0 1.5rem;
+		}
+		.second_menu li{
+			height: 3rem;
+		}
+		.second_menu li a{
+			display: block;
+			width: 9rem;
+			font-size: 1.6rem;
+			text-align: center;
+			line-height: 3rem;
+		}
+		.second_menu li a:hover{
+			background-color: #fc6731;
+		}
+		/*HTML/CSS 实现*/
+		.demo_hc .first_menu > li:hover ul{
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+	<section class="demo_hc">
+		<h2>HTML/CSS实现</h2>
+		<div class="container">
+			<ul class="first_menu">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">现金货款</a>
+					<ul class="second_menu">
+						<li><a href="#">快速贷</a></li>
+						<li><a href="#">消费贷</a></li>
+						<li><a href="#">信贷之家</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">场景贷</a>
+					<ul class="second_menu">
+						<li><a href="#">车商贷</a></li>
+						<li><a href="#">车分期</a></li>
+						<li><a href="#">58月付</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">理财</a>
+					<ul class="second_menu">
+						<li><a href="#">理财</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">信用卡</a>
+					<ul class="second_menu">
+						<li><a href="#">信用卡</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">彩票</a>
+					<ul class="second_menu">
+						<li><a href="#">彩票</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="demo_js">
+		<h2>原生JavaScript实现</h2>
+		<div class="container">
+			<ul class="first_menu">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li class="first_item">
+					<a href="#">现金货款</a>
+					<ul class="second_menu">
+						<li><a href="#">快速贷</a></li>
+						<li><a href="#">消费贷</a></li>
+						<li><a href="#">信贷之家</a></li>
+					</ul>
+				</li>
+				<li class="first_item">
+					<a href="#">场景贷</a>
+					<ul class="second_menu">
+						<li><a href="#">车商贷</a></li>
+						<li><a href="#">车分期</a></li>
+						<li><a href="#">58月付</a></li>
+					</ul>
+				</li>
+				<li class="first_item">
+					<a href="#">理财</a>
+					<ul class="second_menu">
+						<li><a href="#">理财</a></li>
+					</ul>
+				</li>
+				<li class="first_item">
+					<a href="#">信用卡</a>
+					<ul class="second_menu">
+						<li><a href="#">信用卡</a></li>
+					</ul>
+				</li>
+				<li class="first_item">
+					<a href="#">彩票</a>
+					<ul class="second_menu">
+						<li><a href="#">彩票</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="demo_jq">
+		<h2>jQuery实现</h2>
+		<div class="container">
+			<ul class="first_menu">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li class="firstItem">
+					<a href="#">现金货款</a>
+					<ul class="second_menu">
+						<li><a href="#">快速贷</a></li>
+						<li><a href="#">消费贷</a></li>
+						<li><a href="#">信贷之家</a></li>
+					</ul>
+				</li>
+				<li class="firstItem">
+					<a href="#">场景贷</a>
+					<ul class="second_menu">
+						<li><a href="#">车商贷</a></li>
+						<li><a href="#">车分期</a></li>
+						<li><a href="#">58月付</a></li>
+					</ul>
+				</li>
+				<li class="firstItem">
+					<a href="#">理财</a>
+					<ul class="second_menu">
+						<li><a href="#">理财</a></li>
+					</ul>
+				</li>
+				<li class="firstItem">
+					<a href="#">信用卡</a>
+					<ul class="second_menu">
+						<li><a href="#">信用卡</a></li>
+					</ul>
+				</li>
+				<li class="firstItem">
+					<a href="#">彩票</a>
+					<ul class="second_menu">
+						<li><a href="#">彩票</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+<script>
+//原生js实现
+	function showIt(event){
+		var submenu = this.querySelector("ul");
+		submenu.style.display = "block";
+	}
+	function hideIt(event){
+		var submenu = this.querySelector("ul");
+		submenu.style.display = "none";
+	}
+	window.onload =function(){
+		var firstItems = document.querySelectorAll('.first_item');
+		for (var i = 0; i < firstItems.length; i++) {
+			firstItems[i].addEventListener('mouseover',showIt);
+			firstItems[i].addEventListener('mouseout',hideIt);
+		}
+	}
+
+//jQuery实现
+$(function(){
+	$('.firstItem').mouseover(function(){
+		$(this).children('ul').show();
+	}).mouseout(function(){
+		$(this).children('ul').hide();
+	})
+})
+
+</script>
+
+</body>
+</html>
