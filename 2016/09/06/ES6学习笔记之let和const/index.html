@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog," />
+  <meta name="keywords" content="-let -const -块级作用域," />
 
 
 
@@ -80,16 +80,16 @@
 
 
 
-<meta name="description" content="一晃半个多月过去了，说实话这段时间过得蛮荒废的。">
+<meta name="description" content="块级作用域JavaScript的ES5规范中只有全局作用域和函数作用域，这带来很多不合理的地方。比如内层变量覆盖外层变量,用来计数的循环变量泄露为全局变量。ES6中为我们提供了let和const命令来构造块级作用域。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回望">
-<meta property="og:url" content="http://smileBug.github.io/2016/05/12/回望/index.html">
+<meta property="og:title" content="ES6学习笔记之let和const">
+<meta property="og:url" content="http://smileBug.github.io/2016/09/06/ES6学习笔记之let和const/index.html">
 <meta property="og:site_name" content="拾荒岁月">
-<meta property="og:description" content="一晃半个多月过去了，说实话这段时间过得蛮荒废的。">
-<meta property="og:updated_time" content="2016-07-17T07:57:16.356Z">
+<meta property="og:description" content="块级作用域JavaScript的ES5规范中只有全局作用域和函数作用域，这带来很多不合理的地方。比如内层变量覆盖外层变量,用来计数的循环变量泄露为全局变量。ES6中为我们提供了let和const命令来构造块级作用域。">
+<meta property="og:updated_time" content="2016-09-06T03:13:01.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回望">
-<meta name="twitter:description" content="一晃半个多月过去了，说实话这段时间过得蛮荒废的。">
+<meta name="twitter:title" content="ES6学习笔记之let和const">
+<meta name="twitter:description" content="块级作用域JavaScript的ES5规范中只有全局作用域和函数作用域，这带来很多不合理的地方。比如内层变量覆盖外层变量,用来计数的循环变量泄露为全局变量。ES6中为我们提供了let和const命令来构造块级作用域。">
 
 
 
@@ -107,7 +107,7 @@
   };
 </script>
 
-  <title> 回望 | 拾荒岁月 </title>
+  <title> ES6学习笔记之let和const | 拾荒岁月 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +257,7 @@
             
             
               
-                回望
+                ES6学习笔记之let和const
               
             
           </h1>
@@ -269,8 +269,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-12T13:16:23+08:00" content="2016-05-12">
-              2016-05-12
+            <time itemprop="dateCreated" datetime="2016-09-06T10:15:55+08:00" content="2016-09-06">
+              2016-09-06
             </time>
           </span>
 
@@ -283,8 +283,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
                   </a>
                 </span>
 
@@ -299,8 +299,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/12/回望/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/12/回望/" itemprop="commentsCount"></span>
+                <a href="/2016/09/06/ES6学习笔记之let和const/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/ES6学习笔记之let和const/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,10 +325,22 @@
       
 
       
-        <p>一晃半个多月过去了，说实话这段时间过得蛮荒废的。<br><a id="more"></a><br>之前看过一个演说，讲到人的拖延症。里面说到每个人或多或少都有点拖延症，一份限时一个月的报告想着剩半个月再做，等到了半个月又拖到最后一礼拜…等到最后一两天实在不能拖，然后加班加点粗制滥造，最后结果难免不尽人意。而当遇到没有期限的工作，一旦拖延起来，那完成也就遥遥无期，也许就像温水煮青蛙，只有在大难临头的刹那才会想到挣扎，而那时必然已经来不及了。</p>
-<p>想到自己，深思极恐，半个多月的时间，如果我能坚持每天学习的话，说不定我已经把js的红宝书看一半了，说不定我能练手两三个实战项目了。可我就让它就像水一样白白流过，没有留下一点痕迹，没有任何收获，想起来的只是我作为一个人类在这叫做地球的星球上生存了半个月。想到这里，我一阵惊慌，到底有多少个这样的半个月从我眼前掠过。而我如果再这样无所谓，不有所改变的话，那也许一切的理想都是妄谈。</p>
-<p>我在想如果我之前没有写博客，就这么过了半个月也许不会有这么大的感触，而当我看到半个多月没有更新，然后再想起这段时间的无所事事，对于自己有种罪恶感，让我回望过去，鞭策自己。</p>
-<p>知乎上有句很经典的话“种一棵树最好的时间是十年前，其次是现在。”</p>
+        <h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>JavaScript的ES5规范中只有全局作用域和函数作用域，这带来很多不合理的地方。比如内层变量覆盖外层变量,用来计数的循环变量泄露为全局变量。ES6中为我们提供了let和const命令来构造块级作用域。<br><a id="more"></a></p>
+<h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><p>ES6新增了let命令来申明变量，其用法类似var。不过let声明的变量，只在所在的代码块内有效。也就是形成了JavaScript所没有的<strong>块级作用域</strong>。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>直接来例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);   <span class="comment">//ReferenceError: a is not defined.</span></span><br><span class="line"><span class="built_in">console</span>.log(b);   <span class="comment">//3</span></span><br></pre></td></tr></table></figure></p>
+<p>在代码块中，分别用let和var声明了两个变量，然后在代码块外调用了这两个变量，结果var声明的变量返回了正确的值，而let声明的变量报错。这表明了let声明的变量只在它所在的代码块中有效 。</p>
+<p>let声明在循环中极其好用，之前在闭包中有提到：<a href="http://smilebug.me/2016/07/26/JavaScript-%E9%97%AD%E5%8C%85/" target="_blank" rel="external">JavaScript 闭包</a>;</p>
+<h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p>总所周知，var声明变量和函数声明都会提前，而let声明不会，变量在声明前使用就会报错。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">////ReferenceError: a is not defined.</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>如果区块中存在let命令，这个区块对以let声明的变量，从一开始就行形成了封闭作用域。凡是在声明前就使用这些变量，就会报错。（总之，在代码块内，使用let声明变量前，该变量都是不可用的，即使在全局作用域中有这个对象）<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a); <span class="comment">//ReferenceError: a is not defined</span></span><br><span class="line">	<span class="keyword">let</span> a = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><p>let不允许在相同作用域内，重复声明同一个变量。因此也不能在函数内部重新声明参数。</p>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p>ES6中的const命令声明一个只读的常量，一旦声明，常量的值就不能改变，这也意味着，const一旦声明变量就必须立即赋值，而不能等到以后赋值。</p>
+<h3 id="const使用注意"><a href="#const使用注意" class="headerlink" title="const使用注意"></a>const使用注意</h3><p>const的作用域和let相同：只在声明的块级作用域中有效。</p>
+<p>const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。</p>
+<p>const声明的常量，也与let一样不可重复声明。</p>
+<h3 id="复合类型的变量声明"><a href="#复合类型的变量声明" class="headerlink" title="复合类型的变量声明"></a>复合类型的变量声明</h3><p>对于复合类型的变量，变量名不指向数据，而指向数据所在的地址。const命令只是保证变量名指向的地址不变，而不保证该地址的数据不变。</p>
+<h2 id="全局对象的属性"><a href="#全局对象的属性" class="headerlink" title="全局对象的属性"></a>全局对象的属性</h2><p>全局对象是最顶层的对象，在浏览器环境指的是window对象，在Node.js指的是global对象。ES5之中，全局对象的属性与全局变量是等价的。<br>ES6为了改变这一点，一方面规定，为了保持兼容性，var命令和function命令声明的全局变量，依旧是全局对象的属性；另一方面规定，let命令、const命令、class命令声明的全局变量，不属于全局对象的属性。也就是说，从ES6开始，全局变量将逐步与全局对象的属性脱钩。<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> a = <span class="number">1</span>;</span><br><span class="line">console.<span class="keyword">log</span>(a);  <span class="comment">//1</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">consle.<span class="keyword">log</span>(b)  <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，全局变量a由var命令声明，所以它是全局对象的属性；全局变量b由let命令声明，所以它不是全局对象的属性，返回undefined。</p>
+<h2 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h2><p><a href="http://es6.ruanyifeng.com/#docs/let" target="_blank" rel="external">《ES6 标准入门》</a></p>
 
       
     </div>
@@ -349,7 +361,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag">#blog</a>
+            <a href="/tags/let-const-块级作用域/" rel="tag">#-let -const -块级作用域</a>
           
         </div>
       
@@ -358,17 +370,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/23/JavaScript 判断数组以及instanceof的局限性/" rel="next" title="JavaScript 判断数组以及instanceof的局限性">
-                <i class="fa fa-chevron-left"></i> JavaScript 判断数组以及instanceof的局限性
+              <a href="/2016/08/20/JavaScript-正则表达式/" rel="next" title="JavaScript 正则表达式">
+                <i class="fa fa-chevron-left"></i> JavaScript 正则表达式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/17/留校以后/" rel="prev" title="留校以后">
-                留校以后 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -394,8 +402,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/12/回望/"
-           data-title="回望" data-url="http://smileBug.github.io/2016/05/12/回望/">
+      <div class="ds-thread" data-thread-key="2016/09/06/ES6学习笔记之let和const/"
+           data-title="ES6学习笔记之let和const" data-url="http://smileBug.github.io/2016/09/06/ES6学习笔记之let和const/">
       </div>
     
   </div>
@@ -515,7 +523,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let命令"><span class="nav-number">2.</span> <span class="nav-text">let命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">2.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不存在变量提升"><span class="nav-number">2.2.</span> <span class="nav-text">不存在变量提升</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂时性死区"><span class="nav-number">2.3.</span> <span class="nav-text">暂时性死区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不允许重复声明"><span class="nav-number">2.4.</span> <span class="nav-text">不允许重复声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const命令"><span class="nav-number">3.</span> <span class="nav-text">const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const使用注意"><span class="nav-number">3.1.</span> <span class="nav-text">const使用注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合类型的变量声明"><span class="nav-number">3.2.</span> <span class="nav-text">复合类型的变量声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局对象的属性"><span class="nav-number">4.</span> <span class="nav-text">全局对象的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料参考"><span class="nav-number">5.</span> <span class="nav-text">资料参考</span></a></li></ol></div>
             
           </div>
         </section>
