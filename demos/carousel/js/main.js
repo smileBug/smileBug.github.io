@@ -87,7 +87,7 @@ window.onload = function(){
         return ;
       } else {
         hideButton();
-        var myIndex = this.getAttribute("index");
+        var myIndex = parseInt(this.getAttribute('index'));
         var offset = -600 * (myIndex - index);
         animate(offset);
         index = myIndex;
