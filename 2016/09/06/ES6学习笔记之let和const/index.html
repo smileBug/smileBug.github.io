@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="-let -const -块级作用域," />
+  <meta name="keywords" content="let,const,块级作用域," />
 
 
 
@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://smileBug.github.io/2016/09/06/ES6学习笔记之let和const/index.html">
 <meta property="og:site_name" content="拾荒岁月">
 <meta property="og:description" content="块级作用域JavaScript的ES5规范中只有全局作用域和函数作用域，这带来很多不合理的地方。比如内层变量覆盖外层变量,用来计数的循环变量泄露为全局变量。ES6中为我们提供了let和const命令来构造块级作用域。">
-<meta property="og:updated_time" content="2016-09-06T03:13:01.956Z">
+<meta property="og:updated_time" content="2016-09-07T02:46:03.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6学习笔记之let和const">
 <meta name="twitter:description" content="块级作用域JavaScript的ES5规范中只有全局作用域和函数作用域，这带来很多不合理的地方。比如内层变量覆盖外层变量,用来计数的循环变量泄露为全局变量。ES6中为我们提供了let和const命令来构造块级作用域。">
@@ -331,7 +331,7 @@
 <p>在代码块中，分别用let和var声明了两个变量，然后在代码块外调用了这两个变量，结果var声明的变量返回了正确的值，而let声明的变量报错。这表明了let声明的变量只在它所在的代码块中有效 。</p>
 <p>let声明在循环中极其好用，之前在闭包中有提到：<a href="http://smilebug.me/2016/07/26/JavaScript-%E9%97%AD%E5%8C%85/" target="_blank" rel="external">JavaScript 闭包</a>;</p>
 <h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p>总所周知，var声明变量和函数声明都会提前，而let声明不会，变量在声明前使用就会报错。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">////ReferenceError: a is not defined.</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
-<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>如果区块中存在let命令，这个区块对以let声明的变量，从一开始就行形成了封闭作用域。凡是在声明前就使用这些变量，就会报错。（总之，在代码块内，使用let声明变量前，该变量都是不可用的，即使在全局作用域中有这个对象）<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a); <span class="comment">//ReferenceError: a is not defined</span></span><br><span class="line">	<span class="keyword">let</span> a = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>如果区块中存在let命令，这个区块对以let声明的变量，从一开始就行形成了封闭作用域。凡是在声明前就使用这些变量，就会报错。（总之，在代码块内，使用let声明变量前，该变量都是不可用的，即使在全局作用域中有这个对象）<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#123;</span><br><span class="line">	  <span class="built_in">console</span>.log(a); <span class="comment">//ReferenceError: a is not defined</span></span><br><span class="line">	  <span class="keyword">let</span> a = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><p>let不允许在相同作用域内，重复声明同一个变量。因此也不能在函数内部重新声明参数。</p>
 <h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p>ES6中的const命令声明一个只读的常量，一旦声明，常量的值就不能改变，这也意味着，const一旦声明变量就必须立即赋值，而不能等到以后赋值。</p>
 <h3 id="const使用注意"><a href="#const使用注意" class="headerlink" title="const使用注意"></a>const使用注意</h3><p>const的作用域和let相同：只在声明的块级作用域中有效。</p>
@@ -361,7 +361,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/let-const-块级作用域/" rel="tag">#-let -const -块级作用域</a>
+            <a href="/tags/let/" rel="tag">#let</a>
+          
+            <a href="/tags/const/" rel="tag">#const</a>
+          
+            <a href="/tags/块级作用域/" rel="tag">#块级作用域</a>
           
         </div>
       
@@ -377,6 +381,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/07/ES6学习笔记之Class/" rel="prev" title="ES6学习笔记之Class">
+                ES6学习笔记之Class <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -448,7 +456,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -465,7 +473,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

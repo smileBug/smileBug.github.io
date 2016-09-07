@@ -3,14 +3,42 @@
 
     
   <url>
+    <loc>http://smileBug.github.io/2016/09/07/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BClass/</loc>
+    <lastmod>2016-09-07T02:46:32.604Z</lastmod>
+    <data>
+        <display>
+        <title>ES6学习笔记之Class</title>
+        <pubTime>2016-09-07T01:58:28.000Z</pubTime>
+        
+        <tag>Class </tag>
+         
+        <tag>extends </tag>
+         
+        <tag>super </tag>
+         
+         
+           
+             
+              <breadCrumb title="ES6" url="http://smileBug.github.io/categories/ES6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://smileBug.github.io/2016/09/06/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Blet%E5%92%8Cconst/</loc>
-    <lastmod>2016-09-06T03:13:01.956Z</lastmod>
+    <lastmod>2016-09-07T02:46:03.058Z</lastmod>
     <data>
         <display>
         <title>ES6学习笔记之let和const</title>
         <pubTime>2016-09-06T02:15:55.000Z</pubTime>
         
-        <tag>-let -const -块级作用域 </tag>
+        <tag>let </tag>
+         
+        <tag>const </tag>
+         
+        <tag>块级作用域 </tag>
          
          
            
