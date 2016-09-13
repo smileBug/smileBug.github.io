@@ -1,0 +1,862 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="易错,变态,44道题," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="最近做了一个一个“44道JavaScript变态题”。都是比较容易答错的点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="postJavaScript Puzzlers 44道令人精分题">
+<meta property="og:url" content="http://smileBug.github.io/2016/09/13/JavaScript-Puzzlers-44道让人精分的题/index.html">
+<meta property="og:site_name" content="拾荒岁月">
+<meta property="og:description" content="最近做了一个一个“44道JavaScript变态题”。都是比较容易答错的点。">
+<meta property="og:updated_time" content="2016-09-13T12:43:52.121Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="postJavaScript Puzzlers 44道令人精分题">
+<meta name="twitter:description" content="最近做了一个一个“44道JavaScript变态题”。都是比较容易答错的点。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6274875369640166000,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> postJavaScript Puzzlers 44道令人精分题 | 拾荒岁月 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">拾荒岁月</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-javascript">
+          <a href="/javascript" rel="section">
+            
+              <i class="menu-item-icon fa fa-star fa-fw"></i> <br />
+            
+            个人项目
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/About" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                postJavaScript Puzzlers 44道令人精分题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-13T20:37:52+08:00" content="2016-09-13">
+              2016-09-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/13/JavaScript-Puzzlers-44道让人精分的题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/13/JavaScript-Puzzlers-44道让人精分的题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+
+         
+           <span id="busuanzi_container_page_pv">&nbsp;&nbsp;|&nbsp;&nbsp;阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近做了一个一个“44道JavaScript变态题”。都是比较容易答错的点。<br><a id="more"></a><br>原文地址：<a href="http://javascript-puzzlers.herokuapp.com/" target="_blank" rel="external">javascript-puzzlers</a></p>
+<p>真的好变态！做完一遍下来你一定会怀疑人生！相信我！</p>
+<p>下面是各题总结：</p>
+<h3 id="第1题"><a href="#第1题" class="headerlink" title="第1题"></a>第1题</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>].<span class="built_in">map</span>(<span class="built_in">parseInt</span>)</span><br></pre></td></tr></table></figure>
+<p>是不是觉得是[1,2,3]。不！你错了！答案是[1,NaN,NaN]。</p>
+<p>首先map接受两个参数：每一项运行的回调函数callback，该回调函数的this值。</p>
+<p>其中回调函数接受三个参数：数组项的值，该项在数组中的索引，数组对象本身。</p>
+<p>题中map只传入回调函数parseInt。</p>
+<p>而parseInt只接受两个参数：string，radix（基数,或称进制，即表示把string看成多少进制的值）。radix的合法区间是2-36，当不设置radix的值或者设置为0时，默认为10.<br>所以本题即为：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'1'</span>, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'2'</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'3'</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>第一个为0被认为是10，而后两个参数不合法。所以答案为[1,NaN,NaN]。</p>
+<h3 id="第2题"><a href="#第2题" class="headerlink" title="第2题"></a>第2题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">typeof</span> <span class="literal">null</span>, <span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>]</span><br></pre></td></tr></table></figure>
+<p>答案为[“object”, false]。</p>
+<p>这个没啥好说的 typeof null === “object” 这个js就是这么规定。</p>
+<p>而null属于原始数据类型，并没有原型对象.</p>
+<h3 id="第3题"><a href="#第3题" class="headerlink" title="第3题"></a>第3题</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>].reduce(Math.pow), [].reduce(Math.pow) ]</span><br></pre></td></tr></table></figure>
+<p>答案为 an error</p>
+<p>这里考的知识点是数组的reduce方法。<br>数组的归并方法reduce接受两个参数：一个在每项都调用的回调函数和归并基础的初始值（可选）。</p>
+<p>其中回调函数接受四个参数：前一个值、当前值、项的索引和数组对象。</p>
+<p>所以第一项等同于 Math.pow(3, 2) ==&gt; 9；Math.pow(9, 1) =&gt; 9。</p>
+<p>而在没有提供初始值的空数组上执行reduce方法会报TypeError错误</p>
+<h3 id="第4题"><a href="#第4题" class="headerlink" title="第4题"></a>第4题</h3><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">val</span> = <span class="string">'smtg'</span>;</span><br><span class="line">console.log(<span class="string">'Value is '</span> + (<span class="keyword">val</span> === <span class="string">'smtg'</span>) ? <span class="string">'Something'</span> : <span class="string">'Nothing'</span>);</span><br></pre></td></tr></table></figure>
+<p>你以为答案会是“Value is Something”？天真！答案是“Something”。</p>
+<p>这里考的知识点是优先级。</p>
+<p>“+”操作符的优先级大于三元操作符，所以上面就变成了<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">'Value is '</span> + (<span class="keyword">val</span> === <span class="string">'smtg'</span>)) ? <span class="string">'Something'</span> : <span class="string">'Nothing'</span></span><br></pre></td></tr></table></figure></p>
+<p>非空字符串对应布尔值为true，所以只输出“Something”！</p>
+<h3 id="第5题"><a href="#第5题" class="headerlink" title="第5题"></a>第5题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'World!'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> name = <span class="string">'Jack'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>答案为“Goodbye Jack”</p>
+<p>这里考的知识点是声明提升。</p>
+<p>var声明提升，而初始化不会提升。<br>所以就相当于：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'World!'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        name = <span class="string">'Jack'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<h3 id="第6题"><a href="#第6题" class="headerlink" title="第6题"></a>第6题</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var END = Math.pow(<span class="number">2</span>, <span class="number">53</span>)<span class="comment">;</span></span><br><span class="line">var START = END - <span class="number">100</span><span class="comment">;</span></span><br><span class="line">var <span class="built_in">count</span> = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">for (var i = START<span class="comment">; i &lt;= END; i++) &#123;</span></span><br><span class="line">    <span class="built_in">count</span>++<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(<span class="built_in">count</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>做这题时，我也是想当然地认为答案是101；而正确答案是程序无限循环。</p>
+<p>这里考的知识点是js的数字精度。</p>
+<p>JavaScript提供的有效数字的精度为53个二进制位，也就是说，绝对值小于2的53次方的整数，即-(2^53-1)到2^53-1，都可以精确表示。</p>
+<p>题中Math.pow(2, 53)表示最大值，最大值加一还是最大值，所以循环不会停，自然也不会输出count的值</p>
+<h3 id="第7题"><a href="#第7题" class="headerlink" title="第7题"></a>第7题</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line">ary[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">ary.filter(<span class="function"><span class="keyword">function</span><span class="params">(x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x === <span class="literal">undefined</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>答案为 [ ]，而不是[undefined * 7]</p>
+<p>这里考的知识点是数组的filter方法。</p>
+<p>filter() 方法使用指定的函数测试所有元素，并创建一个包含所有通过测试的元素的新数组。它接受两个参数：一个在每项都调用的回调函数和执行callback时用于this的值（可选）。</p>
+<p>callback 只会在已经赋值的索引上被调用，对于那些已经被删除或者从未被赋值的索引不会被调用。那些没有通过 callback 测试的元素会被跳过，不会被包含在新数组中。</p>
+<h3 id="第8题"><a href="#第8题" class="headerlink" title="第8题"></a>第8题</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">two</span>   = 0.2</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">one</span>   = 0.1</span><br><span class="line"><span class="keyword">var</span> eight = 0.8</span><br><span class="line"><span class="keyword">var</span> six   = 0.6</span><br><span class="line">[<span class="keyword">two</span> - <span class="keyword">one</span> == <span class="keyword">one</span>, eight - six == <span class="keyword">two</span>]</span><br></pre></td></tr></table></figure>
+<p>答案是 [true , false]。</p>
+<p>考的知识点是 数字精度计算。</p>
+<p>至于声明时候精确什么时候不精确？I don’t know.</p>
+<h3 id="第9题"><a href="#第9题" class="headerlink" title="第9题"></a>第9题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(value) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case A'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case B'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">undefined</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Do not know!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'A'</span>));</span><br></pre></td></tr></table></figure>
+<p>答案是 ‘Do not know!’</p>
+<p>new String(‘A’)返回的是String实例，是对象。和字符串’A’不相等。</p>
+<h3 id="第10题"><a href="#第10题" class="headerlink" title="第10题"></a>第10题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase2</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(value) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case A'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case B'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">undefined</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Do not know!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase2(<span class="built_in">String</span>(<span class="string">'A'</span>));</span><br></pre></td></tr></table></figure>
+<p>答案是 ‘Case A’</p>
+<p>和上题一样只不过直接调用String()返回的是字符串。</p>
+<h3 id="第11题"><a href="#第11题" class="headerlink" title="第11题"></a>第11题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOdd</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isSane</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> isEven(num) || isOdd(num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> values = [<span class="number">7</span>, <span class="number">4</span>, <span class="string">'13'</span>, <span class="number">-9</span>, <span class="literal">Infinity</span>];</span><br><span class="line">values.map(isSane);</span><br></pre></td></tr></table></figure>
+<p>答案是 [true, true, true, false, false]</p>
+<p>前两个没问题，’13’会转换成number类型再运算，余数的正负号随第一个操作数。所以-9 % 2 =&gt; -1。而 Infinity % 2 =&gt; NaN。</p>
+<h3 id="第12题"><a href="#第12题" class="headerlink" title="第12题"></a>第12题</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="number">3</span>, <span class="number">8</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="number">3</span>, <span class="number">2</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="number">3</span>, <span class="number">0</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>答案是 3，NaN，3</p>
+<p>参考第一题</p>
+<h3 id="第13题"><a href="#第13题" class="headerlink" title="第13题"></a>第13题</h3><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.<span class="built_in">isArray</span>( <span class="built_in">Array</span>.prototype )</span><br></pre></td></tr></table></figure>
+<p>答案是 true</p>
+<p>Array.prototype =&gt; [];</p>
+<h3 id="第14题"><a href="#第14题" class="headerlink" title="第14题"></a>第14题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">0</span>];</span><br><span class="line"><span class="keyword">if</span> ([<span class="number">0</span>]) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a == <span class="literal">true</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"wut"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>答案是 false</p>
+<p>在if( )判断语句里作为单独的布尔值，是true；</p>
+<p>而如果进行比较的话，就是false。</p>
+<h3 id="第15题"><a href="#第15题" class="headerlink" title="第15题"></a>第15题</h3><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[]</span>==<span class="string">[]</span></span><br></pre></td></tr></table></figure>
+<p>答案是 false</p>
+<p>数组是引用类型，就算是表面相等的两个数组也不是同一个数组。</p>
+<h3 id="第16题"><a href="#第16题" class="headerlink" title="第16题"></a>第16题</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'5'</span> + <span class="number">3</span></span><br><span class="line"><span class="string">'5'</span> - <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>答案是 ‘53’, 2</p>
+<p>这个很简单，“+” 用来表示两个数的和或者字符串拼接， “-”表示两数之差。</p>
+<h3 id="第17题"><a href="#第17题" class="headerlink" title="第17题"></a>第17题</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">1 </span>+ - + + + - + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>答案是 2</p>
+<p>我觉得只要看两数字间“-”的个数，负负得正。</p>
+<h3 id="第18题"><a href="#第18题" class="headerlink" title="第18题"></a>第18题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = <span class="built_in">Array</span>(<span class="number">3</span>);</span><br><span class="line">ary[<span class="number">0</span>]=<span class="number">2</span></span><br><span class="line">ary.map(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>) </span>&#123; <span class="keyword">return</span> <span class="string">'1'</span>; &#125;);</span><br></pre></td></tr></table></figure>
+<p>答案是 [“1”, undefined × 2]</p>
+<p>和第7题类似，map方法和filter方法一样会跳过未被赋值的项。</p>
+<h3 id="第19题"><a href="#第19题" class="headerlink" title="第19题"></a>第19题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span>(<span class="params">ary</span>) </span>&#123;</span><br><span class="line">  ary[<span class="number">0</span>] = ary[<span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a,b,c</span>) </span>&#123;</span><br><span class="line">  c = <span class="number">10</span></span><br><span class="line">  sidEffecting(<span class="built_in">arguments</span>);</span><br><span class="line">  <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br><span class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>答案是 21</p>
+<p>在非严格模式下，修改arguments或修改参数时会互相影响。而在严格模式下arguments是静态副本，和参数不共享相同的值</p>
+<h3 id="第20题"><a href="#第20题" class="headerlink" title="第20题"></a>第20题</h3><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = <span class="number">111111111111111110000</span>,</span><br><span class="line">    b = <span class="number">1111</span><span class="comment">;</span></span><br><span class="line">a + b<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>答案是 111111111111111110000</p>
+<p>大概是111111111111111110000大于js的最大值了，所以加不上？嗯 应该是。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/易错/" rel="tag">#易错</a>
+          
+            <a href="/tags/变态/" rel="tag">#变态</a>
+          
+            <a href="/tags/44道题/" rel="tag">#44道题</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/07/ES6学习笔记之Class/" rel="next" title="ES6学习笔记之Class">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记之Class
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/13/JavaScript-Puzzlers-44道让人精分的题/"
+           data-title="postJavaScript Puzzlers 44道令人精分题" data-url="http://smileBug.github.io/2016/09/13/JavaScript-Puzzlers-44道让人精分的题/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="smileBug" />
+          <p class="site-author-name" itemprop="name">smileBug</p>
+          <p class="site-description motion-element" itemprop="description">如今最好，别说来日方长</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/smileBug" target="_blank" title="Github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3653738030" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/ye-mu-21" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1题"><span class="nav-number">1.</span> <span class="nav-text">第1题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2题"><span class="nav-number">2.</span> <span class="nav-text">第2题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3题"><span class="nav-number">3.</span> <span class="nav-text">第3题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第4题"><span class="nav-number">4.</span> <span class="nav-text">第4题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第5题"><span class="nav-number">5.</span> <span class="nav-text">第5题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第6题"><span class="nav-number">6.</span> <span class="nav-text">第6题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第7题"><span class="nav-number">7.</span> <span class="nav-text">第7题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第8题"><span class="nav-number">8.</span> <span class="nav-text">第8题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第9题"><span class="nav-number">9.</span> <span class="nav-text">第9题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第10题"><span class="nav-number">10.</span> <span class="nav-text">第10题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第11题"><span class="nav-number">11.</span> <span class="nav-text">第11题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第12题"><span class="nav-number">12.</span> <span class="nav-text">第12题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第13题"><span class="nav-number">13.</span> <span class="nav-text">第13题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第14题"><span class="nav-number">14.</span> <span class="nav-text">第14题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第15题"><span class="nav-number">15.</span> <span class="nav-text">第15题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第16题"><span class="nav-number">16.</span> <span class="nav-text">第16题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第17题"><span class="nav-number">17.</span> <span class="nav-text">第17题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第18题"><span class="nav-number">18.</span> <span class="nav-text">第18题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第19题"><span class="nav-number">19.</span> <span class="nav-text">第19题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第20题"><span class="nav-number">20.</span> <span class="nav-text">第20题</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">smileBug
+
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <script type="text/javascript">
+  var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258680453'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258680453' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  </span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+&nbsp;&nbsp;|&nbsp;&nbsp;本站总点击 <span id="busuanzi_value_site_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"smilebug"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
